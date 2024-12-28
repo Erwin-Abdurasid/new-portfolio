@@ -10,6 +10,8 @@ js_responsibilities();
 function registerHrefs() {
     var hrefSettings = document.getElementsByClassName('.ref-setting');
 
+    console.log(hrefSettings);
+
     hrefSettings.forEach(el => {
         el.addEventListener('click', () => {
             let hrefData = '';
