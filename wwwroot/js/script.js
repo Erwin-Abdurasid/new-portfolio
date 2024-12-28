@@ -4,7 +4,7 @@ function js_responsibilities() {
     toggleTheme();
 }
 
-window.onload(() => {
+document.onload(() => {
     registerHrefs();
 });
 
