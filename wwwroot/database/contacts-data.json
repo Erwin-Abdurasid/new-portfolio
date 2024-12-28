@@ -1,0 +1,28 @@
+[
+    {
+        "phoneNumber": "+639-754-132-376",
+        "email": "erwinhadjirul15@gmail.com",
+        "socialMedias": [
+            {
+                "name": "Facebook",
+                "url": "https://www.facebook.com/profile.php?id=61565564833974/"
+            },
+            {
+                "name": "Github",
+                "url": "https://github.com/Erwin-Hadjirul/"
+            },
+            {
+                "name": "LinkedIn",
+                "url": "https://www.linkedin.com/in/erwin-hadjirul-89397b249/"
+            },
+            {
+                "name": "Portfolio",
+                "url": "https://erwin-abdurasid.github.io/Portfolio/"
+            },
+            {
+                "name": "New Portfolio",
+                "url": "index.html"
+            }
+        ]
+    }
+]
