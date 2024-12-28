@@ -58,30 +58,35 @@ function cloudsAnimation() {
     if (cloud_two !== null) {
         setInterval(() => {
             cloud_two.classList.remove('later');
+            cloud_two.classList.add('now');
 
             var cloud_three = document.querySelector('.cloud.three');
 
             if (cloud_three !== null) {
                 setInterval(() => {
                     cloud_three.classList.remove('later');
+                    cloud_three.classList.add('now');
 
                     var cloud_four = document.querySelector('.cloud.four');
 
                     if (cloud_four !== null) {
                         setInterval(() => {
                             cloud_four.classList.remove('later');
+                            cloud_four.classList.add('now');
 
                             var cloud_five = document.querySelector('.cloud.five');
 
                             if (cloud_five !== null) {
                                 setInterval(() => {
                                     cloud_five.classList.remove('later');
+                                    cloud_five.classList.add('now');
 
                                     var cloud_six = document.querySelector('.cloud.six');
 
                                     if (cloud_six !== null) {
                                         setInterval(() => {
                                             cloud_six.classList.remove('later');
+                                            cloud_six.classList.add('now');
                                         }, 4000);
                                     }
                                 }, 4000);
