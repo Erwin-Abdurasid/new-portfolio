@@ -56,42 +56,41 @@ function cloudsAnimation() {
     var cloud_two = document.querySelector('.cloud.two');
 
     if (cloud_two !== null) {
-        setInterval(() => {
+        setTimeout(() => {
             cloud_two.classList.remove('later');
 
-            // var cloud_three = document.querySelector('.cloud.three');
+            var cloud_three = document.querySelector('.cloud.three');
 
-            // if (cloud_three !== null) {
-            //     setInterval(() => {
-            //         cloud_three.classList.remove('later');
+            if (cloud_three !== null) {
+                setTimeout(() => {
+                    cloud_three.classList.remove('later');
 
-            //         var cloud_four = document.querySelector('.cloud.four');
+                    var cloud_four = document.querySelector('.cloud.four');
 
-            //         if (cloud_four !== null) {
-            //             setInterval(() => {
-            //                 cloud_four.classList.remove('later');
+                    if (cloud_four !== null) {
+                        setTimeout(() => {
+                            cloud_four.classList.remove('later');
 
-            //                 var cloud_five = document.querySelector('.cloud.five');
+                            var cloud_five = document.querySelector('.cloud.five');
 
-            //                 if (cloud_five !== null) {
-            //                     setInterval(() => {
-            //                         cloud_five.classList.remove('later');
+                            if (cloud_five !== null) {
+                                setTimeout(() => {
+                                    cloud_five.classList.remove('later');
 
-            //                         var cloud_six = document.querySelector('.cloud.six');
+                                    var cloud_six = document.querySelector('.cloud.six');
 
-            //                         if (cloud_six !== null) {
-            //                             setInterval(() => {
-            //                                 cloud_six.classList.remove('later');
-            //                             }, 4000);
-            //                         }
-            //                     }, 4000);
-            //                 }
-            //             }, 4000);
-            //         }
-            //     }, 4000);
-            // }
+                                    if (cloud_six !== null) {
+                                        setTimeout(() => {
+                                            cloud_six.classList.remove('later');
+                                        }, 4000);
+                                    }
+                                }, 4000);
+                            }
+                        }, 4000);
+                    }
+                }, 4000);
+            }
         }, 4000);
-        clearInterval();
     }
 }
 
