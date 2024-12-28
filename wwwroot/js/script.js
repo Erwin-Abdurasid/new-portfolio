@@ -7,8 +7,6 @@ function js_responsibilities() {
 
 js_responsibilities();
 
-var globalHTMLInserted;
-
 function registerHrefs() {
     var hrefSettings = document.querySelectorAll('.ref-setting');
 
@@ -70,7 +68,6 @@ function content_extractor(href) {
     var header = document.querySelector('header');
     fetch(href).then(res => {
         if (res.ok) {
-            globalHTMLInserted = res.clone();
             return res.text();
         }
     }).then(htmlSnippet => {
@@ -79,5 +76,8 @@ function content_extractor(href) {
 }
 
 function content_remover() {
-    document.body.removeChild(globalHTMLInserted);
+    var clouds = document.querySelectorAll('.cloud');
+    clouds.forEach(element => {
+        element.remove()
+    });
 }

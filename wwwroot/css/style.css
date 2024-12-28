@@ -286,6 +286,10 @@ footer {
     transform: translate(-50%);
 }
 
+.logo-div {
+    cursor: pointer;
+}
+
 .right-header {
     width: 250px;
     margin-right: 50px;
