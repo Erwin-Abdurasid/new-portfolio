@@ -60,23 +60,23 @@ function cloudsAnimation() {
     var cloud_six = document.querySelector('.cloud.six');
 
     if (cloud_two !== null) {
-        window.setInterval(() => {
+        setInterval(() => {
             cloud_two.classList.remove('later');
 
             if (cloud_three !== null) {
-                window.setInterval(() => {
+                setInterval(() => {
                     cloud_three.classList.remove('later');
 
                     if (cloud_four !== null) {
-                        window.setInterval(() => {
+                        setInterval(() => {
                             cloud_four.classList.remove('later');
 
                             if (cloud_five !== null) {
-                                window.setInterval(() => {
+                                setInterval(() => {
                                     cloud_five.classList.remove('later');
 
                                     if (cloud_six !== null) {
-                                        window.setInterval(() => {
+                                        setInterval(() => {
                                             cloud_six.classList.remove('later');
                                         }, 4000);
                                     }
