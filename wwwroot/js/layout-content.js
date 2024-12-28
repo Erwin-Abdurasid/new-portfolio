@@ -7,7 +7,7 @@ function content_extractor() {
             }
         })
         .then(htmlSnippet => {
-            header.insertAdjacentHTML('afterend', htmlSnippet);
+            header.insertAdjacentHTML('afterend', htmlSnippet.text());
         });
 }
 
