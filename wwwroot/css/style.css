@@ -267,14 +267,13 @@ footer {
     z-index: 1;
 }
 
-.cloud-name a {
+.cloud-name {
     font-size: 2rem;
     color: #999;
     font-weight: bold;
-    text-decoration: none;
 }
 
-.cloud-name a:hover {
+.cloud-name:hover {
     color: #555;
 }
 
