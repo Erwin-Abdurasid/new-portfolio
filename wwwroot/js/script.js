@@ -1,6 +1,5 @@
 function js_responsibilities() {
     content_extractor();
-    cloudsAnimation();
     downloadResumeAnimation();
     toggleTheme();
 }
@@ -50,33 +49,6 @@ function toggleTheme() {
             });
         }
     });
-}
-
-function cloudsAnimation() {
-    var cloud_two = document.querySelector('.cloud.two');
-    setTimeout(() => {
-        if (cloud_two != null) cloud_two.classList.remove('later');
-    }, 4000);
-
-    var cloud_three = document.querySelector('.cloud.three');
-    setTimeout(() => {
-        if (cloud_three != null) cloud_three.classList.remove('later');
-    }, 4000);
-
-    var cloud_four = document.querySelector('.cloud.four');
-    setTimeout(() => {
-        if (cloud_four != null) cloud_four.classList.remove('later');
-    }, 4000);
-
-    var cloud_five = document.querySelector('.cloud.five');
-    setTimeout(() => {
-        if (cloud_five != null) cloud_five.classList.remove('later');
-    }, 4000);
-
-    var cloud_six = document.querySelector('.cloud.six');
-    setTimeout(() => {
-        if (cloud_six != null) cloud_six.classList.remove('later');
-    }, 4000);
 }
 
 function content_extractor() {
