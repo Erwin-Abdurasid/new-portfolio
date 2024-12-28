@@ -265,12 +265,10 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-}
-
-.cloud-name {
     font-size: 2rem;
     color: #999;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .cloud-name:hover {
