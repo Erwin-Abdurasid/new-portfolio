@@ -1,10 +1,25 @@
 function js_responsibilities() {
-    content_extractor();
+    content_extractor('./home.html');
     downloadResumeAnimation();
     toggleTheme();
+    registerHrefs();
 }
 
 js_responsibilities();
+
+var globalHTMLInserted;
+
+function registerHrefs() {
+    var hrefSettings = document.querySelectorAll('.ref-setting');
+
+    hrefSettings.forEach(el => {
+        el.addEventListener('click', () => {
+            let hrefData = el.dataset.ref;
+            content_remover();
+            content_extractor(hrefData);
+        });
+    });
+}
 
 function downloadResumeAnimation() {
     var downloadDiv = document.querySelector('.right-header a');
@@ -51,15 +66,18 @@ function toggleTheme() {
     });
 }
 
-function content_extractor() {
+function content_extractor(href) {
     var header = document.querySelector('header');
-    fetch('./home.html')
-        .then(res => {
-            if (res.ok) {
-                return res.text();
-            }
-        })
-        .then(htmlSnippet => {
-            header.insertAdjacentHTML('afterend', htmlSnippet);
-        });
+    fetch(href).then(res => {
+        if (res.ok) {
+            globalHTMLInserted = res.clone();
+            return res.text();
+        }
+    }).then(htmlSnippet => {
+        header.insertAdjacentHTML('afterend', htmlSnippet);
+    });
+}
+
+function content_remover() {
+    document.body.removeChild(globalHTMLInserted);
 }
