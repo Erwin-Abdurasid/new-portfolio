@@ -3,6 +3,7 @@ function js_responsibilities() {
     downloadResumeAnimation();
     toggleTheme();
     registerHrefs();
+    registerHrefs();
 }
 
 js_responsibilities();
