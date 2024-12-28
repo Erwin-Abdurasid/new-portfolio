@@ -2,6 +2,7 @@ function js_responsibilities() {
     downloadResumeAnimation();
     toggleTheme();
     cloudsAnimation();
+    content_extractor();
 }
 
 js_responsibilities();
@@ -87,4 +88,17 @@ function cloudsAnimation() {
             }
         }, 4000);
     }
+}
+
+function content_extractor() {
+    var header = document.querySelector('header');
+    fetch('./home.html')
+        .then(res => {
+            if (res.ok) {
+                return res.text();
+            }
+        })
+        .then(htmlSnippet => {
+            header.insertAdjacentHTML('afterend', htmlSnippet);
+        });
 }
