@@ -2,10 +2,6 @@ window.onload = function () {
     js_responsibilities();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    registerHrefs();
-}, false);
-
 function js_responsibilities() {
     content_extractor('./home.html');
     downloadResumeAnimation();
@@ -19,7 +15,7 @@ function registerHrefs() {
 
     hrefSettings.forEach(el => {
         el.addEventListener('click', () => {
-            let hrefData = '';
+            let hrefData;
 
             switch (el.dataset.ref) {
                 case '/':
@@ -95,6 +91,7 @@ function content_extractor(href) {
         }
     }).then(htmlSnippet => {
         header.insertAdjacentHTML('afterend', htmlSnippet);
+        registerHrefs();
     });
 }
 
