@@ -104,7 +104,7 @@ function toggleTheme() {
         var stillClouds = document.querySelectorAll('.still-cloud');
 
         if (themeNav.contains(document.querySelector('.theme input:checked'))) {
-            document.body.style.background = 'linear-gradient(to bottom, #000000, #0c1128, #1e2340, #2e3555)';
+            document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
             footer.style.color = '#72db70';
             clouds.forEach(elem => {
                 elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
