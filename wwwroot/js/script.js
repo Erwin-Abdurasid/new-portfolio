@@ -1,14 +1,16 @@
+window.onload = function () {
+    js_responsibilities();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    registerHrefs();
+}, false);
+
 function js_responsibilities() {
     content_extractor('./home.html');
     downloadResumeAnimation();
     toggleTheme();
-
-    document.addEventListener('DOMContentLoaded', function () {
-        registerHrefs();
-    }, false);
 }
-
-js_responsibilities();
 
 function registerHrefs() {
     var hrefSettings = document.querySelectorAll('.ref-setting');
