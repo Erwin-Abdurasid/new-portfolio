@@ -2,8 +2,11 @@ function js_responsibilities() {
     content_extractor('./home.html');
     downloadResumeAnimation();
     toggleTheme();
-    registerHrefs();
 }
+
+window.onload(() => {
+    registerHrefs();
+});
 
 js_responsibilities();
 
