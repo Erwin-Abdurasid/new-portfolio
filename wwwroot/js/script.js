@@ -24,11 +24,53 @@ function registerHrefs() {
                 case '/projects':
                     hrefData = './projects.html';
                     break;
+                case '/projects-B':
+                    hrefData = './best-projects.html';
+                    break;
+                case '/projects-S':
+                    hrefData = './simple-projects.html';
+                    break;
                 case '/services':
                     hrefData = './services.html';
                     break;
+                case '/programming':
+                    hrefData = './services-programming.html';
+                    break;
+                case '/desk-devt':
+                    hrefData = './services-deskdev.html';
+                    break;
+                case '/web-devt':
+                    hrefData = './services-webdev.html';
+                    break;
+                case '/mobile-devt':
+                    hrefData = './services-mobiledev.html';
+                    break;
+                case '/data-mngt':
+                    hrefData = './database-management.html';
+                    break;
+                case '/system-design':
+                    hrefData = './system-design.html';
+                    break;
                 case '/about':
                     hrefData = './about.html';
+                    break;
+                case '/contacts':
+                    hrefData = './contacts.html';
+                    break;
+                case '/educ':
+                    hrefData = './educ.html';
+                    break;
+                case '/works':
+                    hrefData = './works.html';
+                    break;
+                case '/skills':
+                    hrefData = './skills.html';
+                    break;
+                case '/certs':
+                    hrefData = './certs.html';
+                    break;
+                case '/interests':
+                    hrefData = './interests.html';
                     break;
             }
 
