@@ -2,11 +2,11 @@ function js_responsibilities() {
     content_extractor('./home.html');
     downloadResumeAnimation();
     toggleTheme();
-}
 
-document.onload(() => {
-    registerHrefs();
-});
+    document.addEventListener('DOMContentLoaded', function () {
+        registerHrefs();
+    }, false);
+}
 
 js_responsibilities();
 
