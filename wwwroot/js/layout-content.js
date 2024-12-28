@@ -3,11 +3,11 @@ function content_extractor() {
     fetch('./home.html')
         .then(res => {
             if (res.ok) {
-                return res;
+                return res.text();
             }
         })
         .then(htmlSnippet => {
-            header.insertAdjacentHTML('afterend', htmlSnippet.text());
+            header.insertAdjacentHTML('afterend', htmlSnippet);
         });
 }
 
