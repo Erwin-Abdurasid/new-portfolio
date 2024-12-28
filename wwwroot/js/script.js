@@ -8,7 +8,7 @@ function js_responsibilities() {
 js_responsibilities();
 
 function registerHrefs() {
-    var hrefSettings = document.getElementsByClassName('.ref-setting');
+    var hrefSettings = document.querySelectorAll('.ref-setting');
 
     console.log(hrefSettings);
 
