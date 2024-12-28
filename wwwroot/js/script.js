@@ -54,44 +54,24 @@ function toggleTheme() {
 
 function cloudsAnimation() {
     var cloud_two = document.querySelector('.cloud.two');
+    setTimeout(() => { }, 4000);
+    if (cloud_two != null) cloud_two.classList.remove('later');
 
-    if (cloud_two !== null) {
-        setTimeout(() => {
-            cloud_two.classList.remove('later');
+    var cloud_three = document.querySelector('.cloud.three');
+    setTimeout(() => { }, 4000);
+    if (cloud_three != null) cloud_three.classList.remove('later');
 
-            var cloud_three = document.querySelector('.cloud.three');
+    var cloud_four = document.querySelector('.cloud.four');
+    setTimeout(() => { }, 4000);
+    if (cloud_four != null) cloud_four.classList.remove('later');
 
-            if (cloud_three !== null) {
-                setTimeout(() => {
-                    cloud_three.classList.remove('later');
+    var cloud_five = document.querySelector('.cloud.five');
+    setTimeout(() => { }, 4000);
+    if (cloud_five != null) cloud_five.classList.remove('later');
 
-                    var cloud_four = document.querySelector('.cloud.four');
-
-                    if (cloud_four !== null) {
-                        setTimeout(() => {
-                            cloud_four.classList.remove('later');
-
-                            var cloud_five = document.querySelector('.cloud.five');
-
-                            if (cloud_five !== null) {
-                                setTimeout(() => {
-                                    cloud_five.classList.remove('later');
-
-                                    var cloud_six = document.querySelector('.cloud.six');
-
-                                    if (cloud_six !== null) {
-                                        setTimeout(() => {
-                                            cloud_six.classList.remove('later');
-                                        }, 4000);
-                                    }
-                                }, 4000);
-                            }
-                        }, 4000);
-                    }
-                }, 4000);
-            }
-        }, 4000);
-    }
+    var cloud_six = document.querySelector('.cloud.six');
+    setTimeout(() => { }, 4000);
+    if (cloud_six != null) cloud_six.classList.remove('later');
 }
 
 function content_extractor() {
