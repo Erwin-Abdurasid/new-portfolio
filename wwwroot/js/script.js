@@ -134,6 +134,8 @@ function content_extractor(href) {
     }).then(htmlSnippet => {
         header.insertAdjacentHTML('afterend', htmlSnippet);
         registerHrefs();
+        downloadResumeAnimation();
+        toggleTheme();
     });
 }
 
