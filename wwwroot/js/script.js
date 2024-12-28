@@ -1,8 +1,8 @@
 function js_responsibilities() {
+    content_extractor();
     downloadResumeAnimation();
     toggleTheme();
     cloudsAnimation();
-    content_extractor();
 }
 
 js_responsibilities();
