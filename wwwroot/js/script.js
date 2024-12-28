@@ -12,7 +12,23 @@ function registerHrefs() {
 
     hrefSettings.forEach(el => {
         el.addEventListener('click', () => {
-            let hrefData = el.dataset.ref;
+            let hrefData = '';
+
+            switch (el.dataset.ref) {
+                case '/':
+                    hrefData = './home.html';
+                    break;
+                case '/projects':
+                    hrefData = './projects.html';
+                    break;
+                case '/services':
+                    hrefData = './services.html';
+                    break;
+                case '/about':
+                    hrefData = './about.html';
+                    break;
+            }
+
             content_remover();
             content_extractor(hrefData);
         });
