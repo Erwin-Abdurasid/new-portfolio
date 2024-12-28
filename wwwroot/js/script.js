@@ -3,13 +3,12 @@ function js_responsibilities() {
     downloadResumeAnimation();
     toggleTheme();
     registerHrefs();
-    registerHrefs();
 }
 
 js_responsibilities();
 
 function registerHrefs() {
-    var hrefSettings = document.querySelectorAll('.ref-setting');
+    var hrefSettings = document.getElementsByClassName('.ref-setting');
 
     hrefSettings.forEach(el => {
         el.addEventListener('click', () => {
