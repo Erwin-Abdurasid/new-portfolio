@@ -240,7 +240,6 @@ footer {
 }
 
 .still-cloud article {
-    filter: blur(4px);
     height: 400px;
     width: 700px;
     overflow: scroll;
@@ -250,6 +249,7 @@ footer {
     top: 10%;
     left: 50%;
     transform: translate(-50%);
+    background: rgba(99, 99, 99, 0.3);
 }
 
 .still-cloud article section {
