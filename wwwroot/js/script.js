@@ -177,9 +177,15 @@ function content_extractor(href) {
 
 function content_remover() {
     var clouds = document.querySelectorAll('.cloud');
+    var contents = document.getElementById('contents');
+
     clouds.forEach(element => {
         element.remove()
     });
+
+    if (contents !== null) {
+        contents.remove();
+    }
 }
 
 function contactsImage() {
