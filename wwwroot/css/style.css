@@ -229,7 +229,7 @@ footer {
 
 #back-btn {
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 #back-btn:hover {
