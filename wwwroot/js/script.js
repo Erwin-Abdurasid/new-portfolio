@@ -109,7 +109,7 @@ function change_theme() {
     var detailedElems2 = document.querySelectorAll('#contents article section p');
     var detailedElems3 = document.querySelectorAll('#contents article section ul li');
     var detailedElems4 = document.querySelectorAll('#contents article section ul li a');
-    var backBtn = document.getElementById('back-btn');
+    var backBtn = document.querySelector('#back-btn');
 
     if (themeNav.contains(document.querySelector('.theme input:checked'))) {
         document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
@@ -117,6 +117,7 @@ function change_theme() {
         clouds.forEach(elem => {
             elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
+        backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-light-svgrepo-com.svg');
         contents.forEach(elem => {
             elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
@@ -133,13 +134,13 @@ function change_theme() {
             elem.style.color = '#fff';
             elem.style.textDecorationColor = '#3737ee';
         });
-        backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-light-svgrepo-com.svg');
     } else {
         document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
         footer.style.color = '#126a12';
         clouds.forEach(elem => {
             elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
         });
+        backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-dark-svgrepo-com.svg');
         contents.forEach(elem => {
             elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
         });
@@ -156,7 +157,6 @@ function change_theme() {
             elem.style.color = '#000';
             elem.style.textDecorationColor = '#000049';
         });
-        backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-dark-svgrepo-com.svg');
     }
 }
 
@@ -201,7 +201,6 @@ function contactsImage() {
     fetch('./wwwroot/database/images-data.json').then(data => {
         return data.json();
     }).then(dataEval => {
-        console.log(dataEval);
         for (let i = 0; i < dataEval.length; i++) {
             targetImgs[i].setAttribute('src', dataEval[i].imgPath);
             targetNames[i].innerHTML = dataEval[i].name;
@@ -213,7 +212,6 @@ function contactsImage() {
     fetch('./wwwroot/database/contacts-data.json').then(data => {
         return data.json();
     }).then(dataEval => {
-        console.log(dataEval);
         for (let i = 0; i < dataEval.length; i++) {
             targetPNs[i].children[0].innerText = dataEval[i].phoneNumber;
             targetEAs[i].children[0].innerText = dataEval[i].email;
