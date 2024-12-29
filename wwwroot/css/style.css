@@ -250,7 +250,8 @@ footer {
     left: 50%;
     transform: translate(-50%);
     background: rgba(99, 99, 99, 0.1);
-    border-radius: 100px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .still-cloud article section {
