@@ -180,7 +180,7 @@ function content_extractor(href) {
 
 function content_remover() {
     var clouds = document.querySelectorAll('.cloud');
-    var backBtn = document.querySelector('#back-btn');
+    var backBtn = document.getElementById('back-btn');
     var contents = document.getElementById('contents');
 
     if (clouds !== null) {
