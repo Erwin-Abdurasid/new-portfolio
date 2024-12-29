@@ -166,6 +166,10 @@ function content_extractor(href) {
         registerHrefs();
         downloadResumeAnimation();
         change_theme();
+
+        if (href === './contacts.html') {
+            contactsImage();
+        }
     });
 }
 
@@ -173,5 +177,35 @@ function content_remover() {
     var clouds = document.querySelectorAll('.cloud');
     clouds.forEach(element => {
         element.remove()
+    });
+}
+
+function contactsImage() {
+    fetch('./www/database/images-data.json').then(data => {
+        var targetImgs = document.querySelectorAll('.still-cloud article section.img img');
+        var targetPs = document.querySelectorAll('.still-cloud article section.img p');
+        var dataEval = JSON.parse(data);
+
+        for (let i = 0; i < dataEval.length; i++) {
+            targetImgs[i].setAttribute('src', dataEval[i].imagePath);
+            targetPs[i].setAttribute('src', dataEval[i].name);
+        }
+    }).catch(err => {
+        console.log(err);
+    });
+
+    fetch('./www/database/contacts-data.json').then(data => {
+        var targetPNs = document.querySelectorAll('.still-cloud article section.contacts .pn');
+        var targetEAs = document.querySelectorAll('.still-cloud article section.contacts .ea');
+        var targetULs = document.querySelectorAll('.still-cloud article section.contacts ul');
+        var dataEval = JSON.parse(data);
+
+        for (let i = 0; i < dataEval.length; i++) {
+            targetPNs[i].firstChild.textContent = dataEval[i].phoneNumber;
+            targetEAs[i].firstChild.textContent = dataEval[i].email;
+            for (let j = 0; j < targetULs[i].childNodes.length; j++) {
+                targetULs[i].childNodes[j].firstChild.textContent = dataEval[i].socialMedias[j];
+            }
+        }
     });
 }
