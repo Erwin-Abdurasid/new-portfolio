@@ -243,6 +243,8 @@ footer {
     height: 400px;
     width: 700px;
     overflow: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #00f;
     z-index: 3;
     position: absolute;
     top: 10%;
