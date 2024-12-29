@@ -117,7 +117,7 @@ function change_theme() {
         clouds.forEach(elem => {
             elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
-        backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-light-svgrepo-com.svg');
+        if (backBtn !== null) backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-light-svgrepo-com.svg');
         contents.forEach(elem => {
             elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
@@ -140,7 +140,7 @@ function change_theme() {
         clouds.forEach(elem => {
             elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
         });
-        backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-dark-svgrepo-com.svg');
+        if (backBtn !== null) backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-dark-svgrepo-com.svg');
         contents.forEach(elem => {
             elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
         });
