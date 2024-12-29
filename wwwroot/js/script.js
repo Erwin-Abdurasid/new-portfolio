@@ -192,7 +192,7 @@ function contactsImage() {
     }).then(dataEval => {
         console.log(dataEval);
         for (let i = 0; i < dataEval.length; i++) {
-            targetImgs[i].setAttribute('src', dataEval[i].imagePath);
+            targetImgs[i].setAttribute('src', dataEval[i].imgPath);
             targetPs[i].innerHTML = dataEval[i].name;
         }
     }).catch(err => {
