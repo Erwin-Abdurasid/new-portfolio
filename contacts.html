@@ -1,13 +1,13 @@
 <div class="still-cloud big">
     <article>
-        <section class="special-hide">
-            <img src="" alt="Image">
+        <section class="img special-hide">
+            <img alt="Image">
             <p></p>
         </section>
-        <section class="special-hide">
+        <section class="contacts special-hide">
             <h3>Contacts</h3>
-            <p>Phone Number: <span></span></p>
-            <p>Email Address: <span></span></p>
+            <p class="pn">Phone Number: <span></span></p>
+            <p class="ea">Email Address: <span></span></p>
             <p>Social Medias:</p>
             <ul>
                 <li>
@@ -17,3 +17,33 @@
         </section>
     </article>
 </div>
+
+<script>
+    fetch('./www/database/images-data.json').then(data => {
+        var targetImgs = document.querySelectorAll('.still-cloud article section.img img');
+        var targetPs = document.querySelectorAll('.still-cloud article section.img p');
+        var dataEval = JSON.parse(data);
+
+        for (let i = 0; i < dataEval.length; i++) {
+            targetImgs[i].setAttribute('src', dataEval[i].imagePath);
+            targetPs[i].setAttribute('src', dataEval[i].name);
+        }
+    }).catch(err => {
+        console.log(err);
+    });
+
+    fetch('./www/database/contacts-data.json').then(data => {
+        var targetPNs = document.querySelectorAll('.still-cloud article section.contacts .pn');
+        var targetEAs = document.querySelectorAll('.still-cloud article section.contacts .ea');
+        var targetULs = document.querySelectorAll('.still-cloud article section.contacts ul');
+        var dataEval = JSON.parse(data);
+
+        for (let i = 0; i < dataEval.length; i++) {
+            targetPNs[i].firstChild.textContent = dataEval[i].phoneNumber;
+            targetEAs[i].firstChild.textContent = dataEval[i].email;
+            for (let j = 0; j < targetULs[i].childNodes.length; j++) {
+                targetULs[i].childNodes[j].firstChild.textContent = dataEval[i].socialMedias[j];
+            }
+        }
+    });
+</script>
