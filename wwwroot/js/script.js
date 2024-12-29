@@ -186,10 +186,12 @@ function contactsImage() {
         var targetPs = document.querySelectorAll('.still-cloud article section.img p');
         var dataEval = data.json();
 
-        for (let i = 0; i < dataEval.length; i++) {
-            targetImgs[i].setAttribute('src', dataEval[i].imagePath);
-            targetPs[i].setAttribute('src', dataEval[i].name);
-        }
+        console.log(dataEval);
+
+        // for (let i = 0; i < dataEval.length; i++) {
+        //     targetImgs[i].setAttribute('src', dataEval[i].imagePath);
+        //     targetPs[i].setAttribute('src', dataEval[i].name);
+        // }
     }).catch(err => {
         console.log(err);
     });
@@ -200,15 +202,17 @@ function contactsImage() {
         var targetULs = document.querySelectorAll('.still-cloud article section.contacts ul');
         var dataEval = data.json();
 
-        for (let i = 0; i < dataEval.length; i++) {
-            targetPNs[i].firstChild.textContent = dataEval[i].phoneNumber;
-            targetEAs[i].firstChild.textContent = dataEval[i].email;
+        console.log(dataEval);
 
-            for (let j = 0; j < targetULs[i].childNodes.length; j++) {
-                targetULs[i].childNodes[j].firstChild.textContent = dataEval[i].socialMedias[j].name;
-                targetULs[i].childNodes[j].firstChild.setAttribute('href', dataEval[i].socialMedias[j].url);
-            }
-        }
+        // for (let i = 0; i < dataEval.length; i++) {
+        //     targetPNs[i].firstChild.textContent = dataEval[i].phoneNumber;
+        //     targetEAs[i].firstChild.textContent = dataEval[i].email;
+
+        //     for (let j = 0; j < targetULs[i].childNodes.length; j++) {
+        //         targetULs[i].childNodes[j].firstChild.textContent = dataEval[i].socialMedias[j].name;
+        //         targetULs[i].childNodes[j].firstChild.setAttribute('href', dataEval[i].socialMedias[j].url);
+        //     }
+        // }
     }).catch(err => {
         console.log(err);
     });
