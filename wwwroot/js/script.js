@@ -190,8 +190,6 @@ function contactsImage() {
     fetch('./wwwroot/database/images-data.json').then(data => {
         return data.json();
     }).then(dataEval => {
-        console.log(dataEval);
-
         for (let i = 0; i < dataEval.length; i++) {
             targetImgs[i].setAttribute('src', dataEval[i].imagePath);
             targetPs[i].innerHTML = dataEval[i].name;
@@ -203,8 +201,6 @@ function contactsImage() {
     fetch('./wwwroot/database/contacts-data.json').then(data => {
         return data.json();
     }).then(dataEval => {
-        console.log(dataEval);
-
         for (let i = 0; i < dataEval.length; i++) {
             targetPNs[i].firstChild.textContent = dataEval[i].phoneNumber;
             targetEAs[i].firstChild.textContent = dataEval[i].email;
