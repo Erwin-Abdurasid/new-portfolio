@@ -104,7 +104,7 @@ function change_theme() {
     var themeNav = document.querySelector('.theme');
     var footer = document.querySelector('footer');
     var clouds = document.querySelectorAll('.cloud');
-    var stillClouds = document.querySelectorAll('#contents');
+    var contents = document.querySelectorAll('#contents');
     var detailedElems = document.querySelectorAll('#contents article section h3');
     var detailedElems2 = document.querySelectorAll('#contents article section p');
     var detailedElems3 = document.querySelectorAll('#contents article section ul li');
@@ -116,7 +116,7 @@ function change_theme() {
         clouds.forEach(elem => {
             elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
-        stillClouds.forEach(elem => {
+        contents.forEach(elem => {
             elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
         detailedElems.forEach(elem => {
@@ -138,7 +138,7 @@ function change_theme() {
         clouds.forEach(elem => {
             elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
         });
-        stillClouds.forEach(elem => {
+        contents.forEach(elem => {
             elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
         });
         detailedElems.forEach(elem => {

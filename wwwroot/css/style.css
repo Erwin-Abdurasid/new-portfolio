@@ -202,7 +202,7 @@ footer {
     }
 }
 
-.still-cloud article {
+#contents article {
     height: 400px;
     width: auto;
     overflow: scroll;
@@ -217,26 +217,26 @@ footer {
     padding: 10px;
 }
 
-.still-cloud article section {
+#contents article section {
     margin: 0 0 10px 0;
 }
 
-.still-cloud article section img {
+#contents article section img {
     height: 300px;
     width: auto;
 }
 
-.still-cloud article section ul {
+#contents article section ul {
     margin-left: 50px;
     list-style: decimal;
 }
 
-.still-cloud article section ul li a {
+#contents article section ul li a {
     color: #000;
     text-decoration: none;
 }
 
-.still-cloud article section ul li a:hover {
+#contents article section ul li a:hover {
     text-decoration: underline;
     text-decoration-color: #000049;
 }
