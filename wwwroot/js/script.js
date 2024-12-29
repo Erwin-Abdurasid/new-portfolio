@@ -190,7 +190,7 @@ function content_remover() {
 
 function contactsImage() {
     var targetImgs = document.querySelectorAll('#contents article section.img img');
-    var targetPs = document.querySelectorAll('#contents article section.img p');
+    var targetNames = document.querySelectorAll('#contents article section.img h3');
     var targetPNs = document.querySelectorAll('#contents article section.contacts .pn');
     var targetEAs = document.querySelectorAll('#contents article section.contacts .ea');
     var targetULs = document.querySelectorAll('#contents article section.contacts ul');
@@ -201,7 +201,7 @@ function contactsImage() {
         console.log(dataEval);
         for (let i = 0; i < dataEval.length; i++) {
             targetImgs[i].setAttribute('src', dataEval[i].imgPath);
-            targetPs[i].innerHTML = dataEval[i].name;
+            targetNames[i].innerHTML = dataEval[i].name;
         }
     }).catch(err => {
         console.log(err);
