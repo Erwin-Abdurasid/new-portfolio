@@ -212,8 +212,8 @@ function contactsImage() {
     }).then(dataEval => {
         console.log(dataEval);
         for (let i = 0; i < dataEval.length; i++) {
-            targetPNs[i].firstChild.textContent = dataEval[i].phoneNumber;
-            targetEAs[i].firstChild.textContent = dataEval[i].email;
+            targetPNs[i].children[0].innerText = dataEval[i].phoneNumber;
+            targetEAs[i].children[0].innerText = dataEval[i].email;
 
             for (let j = 0; j < dataEval[i].socialMedias.length; j++) {
                 var newLi = document.createElement('li');
