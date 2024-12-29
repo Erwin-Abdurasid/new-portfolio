@@ -104,7 +104,7 @@ function change_theme() {
     var themeNav = document.querySelector('.theme');
     var footer = document.querySelector('footer');
     var clouds = document.querySelectorAll('.cloud');
-    var contents = document.querySelectorAll('#contents');
+    var contents = document.querySelectorAll('#contents article');
     var detailedElems = document.querySelectorAll('#contents article section h3');
     var detailedElems2 = document.querySelectorAll('#contents article section p');
     var detailedElems3 = document.querySelectorAll('#contents article section ul li');
@@ -117,7 +117,7 @@ function change_theme() {
             elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
         contents.forEach(elem => {
-            elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
+            elem.style.background = '#000';
         });
         detailedElems.forEach(elem => {
             elem.style.color = '#fff';
@@ -139,7 +139,7 @@ function change_theme() {
             elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
         });
         contents.forEach(elem => {
-            elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
+            elem.style.background = '#fff';
         });
         detailedElems.forEach(elem => {
             elem.style.color = '#000';
