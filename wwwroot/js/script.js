@@ -180,14 +180,21 @@ function content_extractor(href) {
 
 function content_remover() {
     var clouds = document.querySelectorAll('.cloud');
+    var backBtn = document.querySelector('#back-btn');
     var contents = document.getElementById('contents');
 
-    clouds.forEach(element => {
-        element.remove()
-    });
+    if (clouds !== null) {
+        clouds.forEach(element => {
+            element.remove()
+        });
+    }
 
     if (contents !== null) {
         contents.remove();
+    }
+
+    if (backBtn !== null) {
+        backBtn.remove();
     }
 }
 
