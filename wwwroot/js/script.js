@@ -208,8 +208,14 @@ function contactsImage() {
             targetEAs[i].firstChild.textContent = dataEval[i].email;
 
             for (let j = 0; j < dataEval[i].socialMedias.length; j++) {
-                targetULs[i].querySelectorAll('li')[j].children[0].textContent = dataEval[i].socialMedias[j].name;
-                targetULs[i].querySelectorAll('li')[j].children[0].setAttribute('href', dataEval[i].socialMedias[j].url);
+                var newLi = document.createElement('li');
+                var newAnch = document.createElement('a');
+
+                newAnch.innerText = dataEval[i].socialMedias[j].name;
+                newAnch.setAttribute('href', dataEval[i].socialMedias[j].url);
+
+                newLi.appendChild(newAnch);
+                targetULs[i].appendChild(newLi);
             }
         }
     }).catch(err => {
