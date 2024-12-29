@@ -109,6 +109,7 @@ function change_theme() {
     var detailedElems2 = document.querySelectorAll('#contents article section p');
     var detailedElems3 = document.querySelectorAll('#contents article section ul li');
     var detailedElems4 = document.querySelectorAll('#contents article section ul li a');
+    var backBtn = document.getElementById('back-btn');
 
     if (themeNav.contains(document.querySelector('.theme input:checked'))) {
         document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
@@ -132,6 +133,7 @@ function change_theme() {
             elem.style.color = '#fff';
             elem.style.textDecorationColor = '#3737ee';
         });
+        backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-light-svgrepo-com.svg');
     } else {
         document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
         footer.style.color = '#126a12';
@@ -154,6 +156,7 @@ function change_theme() {
             elem.style.color = '#000';
             elem.style.textDecorationColor = '#000049';
         });
+        backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-dark-svgrepo-com.svg');
     }
 }
 
