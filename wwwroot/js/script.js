@@ -11,8 +11,6 @@ function js_responsibilities() {
 function registerHrefs() {
     var hrefSettings = document.querySelectorAll('.ref-setting');
 
-    console.log(hrefSettings);
-
     hrefSettings.forEach(el => {
         el.addEventListener('click', () => {
             let hrefData;
@@ -95,34 +93,38 @@ function downloadResumeAnimation() {
 }
 
 function toggleTheme() {
-    var themeNav = document.querySelector('.theme');
     var themeBtn = document.querySelector('.theme input');
 
     themeBtn.addEventListener('change', () => {
-        var footer = document.querySelector('footer');
-        var clouds = document.querySelectorAll('.cloud');
-        var stillClouds = document.querySelectorAll('.still-cloud');
-
-        if (themeNav.contains(document.querySelector('.theme input:checked'))) {
-            document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
-            footer.style.color = '#72db70';
-            clouds.forEach(elem => {
-                elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
-            });
-            stillClouds.forEach(elem => {
-                elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
-            });
-        } else {
-            document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
-            footer.style.color = '#126a12';
-            clouds.forEach(elem => {
-                elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
-            });
-            stillClouds.forEach(elem => {
-                elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
-            });
-        }
+        change_theme();
     });
+}
+
+function change_theme() {
+    var themeNav = document.querySelector('.theme');
+    var footer = document.querySelector('footer');
+    var clouds = document.querySelectorAll('.cloud');
+    var stillClouds = document.querySelectorAll('.still-cloud');
+
+    if (themeNav.contains(document.querySelector('.theme input:checked'))) {
+        document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
+        footer.style.color = '#72db70';
+        clouds.forEach(elem => {
+            elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
+        });
+        stillClouds.forEach(elem => {
+            elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
+        });
+    } else {
+        document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
+        footer.style.color = '#126a12';
+        clouds.forEach(elem => {
+            elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
+        });
+        stillClouds.forEach(elem => {
+            elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
+        });
+    }
 }
 
 function content_extractor(href) {
@@ -135,7 +137,7 @@ function content_extractor(href) {
         header.insertAdjacentHTML('afterend', htmlSnippet);
         registerHrefs();
         downloadResumeAnimation();
-        toggleTheme();
+        change_theme();
     });
 }
 
