@@ -207,7 +207,7 @@ function contactsImage() {
             targetPNs[i].firstChild.textContent = dataEval[i].phoneNumber;
             targetEAs[i].firstChild.textContent = dataEval[i].email;
 
-            for (let j = 0; j < targetULs[i].childNodes.length; j++) {
+            for (let j = 0; j < dataEval[i].socialMedias.length; j++) {
                 targetULs[i].childNodes[j].firstChild.textContent = dataEval[i].socialMedias[j].name;
                 targetULs[i].childNodes[j].firstChild.setAttribute('href', dataEval[i].socialMedias[j].url);
             }
