@@ -242,7 +242,7 @@ footer {
 .still-cloud article {
     height: 400px;
     width: 700px;
-    overflow: hidden;
+    overflow: scroll;
     z-index: 3;
     position: absolute;
     top: 10%;
