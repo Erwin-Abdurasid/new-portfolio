@@ -249,11 +249,12 @@ footer {
     top: 10%;
     left: 50%;
     transform: translate(-50%);
-    background: rgba(99, 99, 99, 0.3);
+    background: rgba(99, 99, 99, 0.1);
+    border-radius: 100px;
 }
 
 .still-cloud article section {
-    margin: 10px 0;
+    margin: 0 0 10px 0;
 }
 
 .still-cloud article section img {
