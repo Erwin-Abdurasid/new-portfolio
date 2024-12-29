@@ -227,6 +227,15 @@ footer {
     width: auto;
 }
 
+#back-btn {
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#back-btn:hover {
+    transform: scaleX(20px);
+}
+
 #contents article section ul {
     margin-left: 50px;
     list-style: decimal;
