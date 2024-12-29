@@ -164,12 +164,12 @@ function content_extractor(href) {
     }).then(htmlSnippet => {
         header.insertAdjacentHTML('afterend', htmlSnippet);
         registerHrefs();
-        downloadResumeAnimation();
-        change_theme();
 
         if (href === './contacts.html') {
             contactsImage();
         }
+
+        change_theme();
     });
 }
 
