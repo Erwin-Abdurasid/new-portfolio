@@ -233,7 +233,7 @@ footer {
 }
 
 #back-btn:hover {
-    transform: scaleX(20px);
+    transform: scaleX(1.2);
 }
 
 #contents article section ul {

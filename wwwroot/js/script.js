@@ -118,7 +118,7 @@ function change_theme() {
             elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
         contents.forEach(elem => {
-            elem.style.background = '#000';
+            elem.style.background = 'adial-gradient(#000, #001, #011, #111)';
         });
         detailedElems.forEach(elem => {
             elem.style.color = '#fff';
@@ -141,7 +141,7 @@ function change_theme() {
             elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
         });
         contents.forEach(elem => {
-            elem.style.background = '#fff';
+            elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
         });
         detailedElems.forEach(elem => {
             elem.style.color = '#000';
