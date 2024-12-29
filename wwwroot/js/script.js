@@ -118,7 +118,7 @@ function change_theme() {
             elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
         contents.forEach(elem => {
-            elem.style.background = 'adial-gradient(#000, #001, #011, #111)';
+            elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
         detailedElems.forEach(elem => {
             elem.style.color = '#fff';
