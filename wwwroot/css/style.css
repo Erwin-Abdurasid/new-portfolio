@@ -254,6 +254,11 @@ footer {
     margin: 10px 0;
 }
 
+.still-cloud article section img {
+    height: 100px;
+    width: auto;
+}
+
 .still-cloud article section ul {
     margin-left: 50px;
     list-style: decimal;
