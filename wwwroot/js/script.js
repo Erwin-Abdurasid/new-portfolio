@@ -108,6 +108,7 @@ function change_theme() {
     var detailedElems = document.querySelectorAll('.still-cloud article section h3');
     var detailedElems2 = document.querySelectorAll('.still-cloud article section p');
     var detailedElems3 = document.querySelectorAll('.still-cloud article section ul li');
+    var detailedElems4 = document.querySelectorAll('.still-cloud article section ul li a');
 
     if (themeNav.contains(document.querySelector('.theme input:checked'))) {
         document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
@@ -127,6 +128,9 @@ function change_theme() {
         detailedElems3.forEach(elem => {
             elem.style.color = '#fff';
         });
+        detailedElems4.forEach(elem => {
+            elem.style.color = '#fff';
+        });
     } else {
         document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
         footer.style.color = '#126a12';
@@ -143,6 +147,9 @@ function change_theme() {
             elem.style.color = '#000';
         });
         detailedElems3.forEach(elem => {
+            elem.style.color = '#000';
+        });
+        detailedElems4.forEach(elem => {
             elem.style.color = '#000';
         });
     }

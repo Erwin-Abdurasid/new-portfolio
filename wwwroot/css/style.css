@@ -259,6 +259,14 @@ footer {
     list-style: decimal;
 }
 
+.still-cloud article section ul li a {
+    text-decoration: underline;
+}
+
+.still-cloud article section ul li a:hover {
+    text-decoration-color: #00f;
+}
+
 .cloud-name {
     position: absolute;
     top: 20%;
