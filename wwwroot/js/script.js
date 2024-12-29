@@ -189,7 +189,7 @@ function content_remover() {
 }
 
 function contactsImage() {
-    var targetImgs = document.querySelectorAll('#contents article section.img img');
+    var targetImgs = document.querySelectorAll('#contents article section.img img.img-prof');
     var targetNames = document.querySelectorAll('#contents article section.img h3');
     var targetPNs = document.querySelectorAll('#contents article section.contacts .pn');
     var targetEAs = document.querySelectorAll('#contents article section.contacts .ea');

@@ -222,7 +222,7 @@ footer {
     margin: 0 0 10px 0;
 }
 
-#contents article section img {
+#contents article section img.img-prof {
     height: 300px;
     width: auto;
 }
