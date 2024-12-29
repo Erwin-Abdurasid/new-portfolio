@@ -181,7 +181,7 @@ function content_remover() {
 }
 
 function contactsImage() {
-    fetch('./www/database/images-data.json').then(data => {
+    fetch('./wwwroot/database/images-data.json').then(data => {
         var targetImgs = document.querySelectorAll('.still-cloud article section.img img');
         var targetPs = document.querySelectorAll('.still-cloud article section.img p');
         var dataEval = JSON.parse(data);
@@ -194,7 +194,7 @@ function contactsImage() {
         console.log(err);
     });
 
-    fetch('./www/database/contacts-data.json').then(data => {
+    fetch('./wwwroot/database/contacts-data.json').then(data => {
         var targetPNs = document.querySelectorAll('.still-cloud article section.contacts .pn');
         var targetEAs = document.querySelectorAll('.still-cloud article section.contacts .ea');
         var targetULs = document.querySelectorAll('.still-cloud article section.contacts ul');
