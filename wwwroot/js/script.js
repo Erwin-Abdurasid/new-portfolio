@@ -105,6 +105,9 @@ function change_theme() {
     var footer = document.querySelector('footer');
     var clouds = document.querySelectorAll('.cloud');
     var stillClouds = document.querySelectorAll('.still-cloud');
+    var detailedElems = document.querySelectorAll('.still-cloud article section h3');
+    var detailedElems2 = document.querySelectorAll('.still-cloud article section p');
+    var detailedElems3 = document.querySelectorAll('.still-cloud article section ul li');
 
     if (themeNav.contains(document.querySelector('.theme input:checked'))) {
         document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
@@ -115,6 +118,15 @@ function change_theme() {
         stillClouds.forEach(elem => {
             elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
         });
+        detailedElems.forEach(elem => {
+            elem.style.color = '#fff';
+        });
+        detailedElems2.forEach(elem => {
+            elem.style.color = '#fff';
+        });
+        detailedElems3.forEach(elem => {
+            elem.style.color = '#fff';
+        });
     } else {
         document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
         footer.style.color = '#126a12';
@@ -123,6 +135,15 @@ function change_theme() {
         });
         stillClouds.forEach(elem => {
             elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
+        });
+        detailedElems.forEach(elem => {
+            elem.style.color = '#000';
+        });
+        detailedElems2.forEach(elem => {
+            elem.style.color = '#000';
+        });
+        detailedElems3.forEach(elem => {
+            elem.style.color = '#000';
         });
     }
 }
