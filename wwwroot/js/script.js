@@ -130,6 +130,7 @@ function change_theme() {
         });
         detailedElems4.forEach(elem => {
             elem.style.color = '#fff';
+            elem.style.textDecorationColor = '#3737ee';
         });
     } else {
         document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
@@ -151,6 +152,7 @@ function change_theme() {
         });
         detailedElems4.forEach(elem => {
             elem.style.color = '#000';
+            elem.style.textDecorationColor = '#000049';
         });
     }
 }

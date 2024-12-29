@@ -267,11 +267,12 @@ footer {
 
 .still-cloud article section ul li a {
     color: #000;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .still-cloud article section ul li a:hover {
-    text-decoration-color: #00f;
+    text-decoration: underline;
+    text-decoration-color: #000049;
 }
 
 .cloud-name {
