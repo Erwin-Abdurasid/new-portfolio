@@ -104,11 +104,11 @@ function change_theme() {
     var themeNav = document.querySelector('.theme');
     var footer = document.querySelector('footer');
     var clouds = document.querySelectorAll('.cloud');
-    var stillClouds = document.querySelectorAll('.still-cloud');
-    var detailedElems = document.querySelectorAll('.still-cloud article section h3');
-    var detailedElems2 = document.querySelectorAll('.still-cloud article section p');
-    var detailedElems3 = document.querySelectorAll('.still-cloud article section ul li');
-    var detailedElems4 = document.querySelectorAll('.still-cloud article section ul li a');
+    var stillClouds = document.querySelectorAll('#contents');
+    var detailedElems = document.querySelectorAll('#contents article section h3');
+    var detailedElems2 = document.querySelectorAll('#contents article section p');
+    var detailedElems3 = document.querySelectorAll('#contents article section ul li');
+    var detailedElems4 = document.querySelectorAll('#contents article section ul li a');
 
     if (themeNav.contains(document.querySelector('.theme input:checked'))) {
         document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
@@ -183,11 +183,11 @@ function content_remover() {
 }
 
 function contactsImage() {
-    var targetImgs = document.querySelectorAll('.still-cloud article section.img img');
-    var targetPs = document.querySelectorAll('.still-cloud article section.img p');
-    var targetPNs = document.querySelectorAll('.still-cloud article section.contacts .pn');
-    var targetEAs = document.querySelectorAll('.still-cloud article section.contacts .ea');
-    var targetULs = document.querySelectorAll('.still-cloud article section.contacts ul');
+    var targetImgs = document.querySelectorAll('#contents article section.img img');
+    var targetPs = document.querySelectorAll('#contents article section.img p');
+    var targetPNs = document.querySelectorAll('#contents article section.contacts .pn');
+    var targetEAs = document.querySelectorAll('#contents article section.contacts .ea');
+    var targetULs = document.querySelectorAll('#contents article section.contacts ul');
 
     fetch('./wwwroot/database/images-data.json').then(data => {
         return data.json();

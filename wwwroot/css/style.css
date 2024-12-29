@@ -98,15 +98,6 @@ footer {
     animation: run_cloud 28s infinite linear;
 }
 
-.still-cloud.big {
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    height: 70%;
-    margin: auto;
-}
-
 .later {
     display: none;
 }
@@ -129,34 +120,6 @@ footer {
 }
 
 .cloud::after {
-    content: '';
-    position: absolute;
-    top: -40%;
-    right: 20%;
-    width: 30%;
-    height: 100%;
-    background: inherit;
-    border-radius: 50%;
-}
-
-.still-cloud {
-    position: absolute;
-    background: radial-gradient(#fff, #ffe, #fee, #eee);
-    border-radius: 1000px;
-}
-
-.still-cloud::before {
-    content: '';
-    position: absolute;
-    top: -80%;
-    left: 10%;
-    width: 50%;
-    height: 150%;
-    background: inherit;
-    border-radius: 50%;
-}
-
-.still-cloud::after {
     content: '';
     position: absolute;
     top: -40%;
@@ -241,7 +204,7 @@ footer {
 
 .still-cloud article {
     height: 400px;
-    width: 700px;
+    width: auto;
     overflow: scroll;
     scrollbar-width: none;
     z-index: 3;
