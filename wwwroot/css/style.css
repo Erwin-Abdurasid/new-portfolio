@@ -240,6 +240,7 @@ footer {
 }
 
 .still-cloud article {
+    filter: blur(4px);
     height: 400px;
     width: 700px;
     overflow: scroll;
