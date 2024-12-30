@@ -282,31 +282,31 @@ function education() {
             var newSect = null;
 
             if (dataEval[i].course !== null) {
-                c = document.createElement('p')
-                    .innerHTML = `
+                c = document.createElement('p');
+                c.innerHTML = `
                     <p class="c">Course: <span>${dataEval[i].course}</span></p>
                 `;
             }
             if (dataEval[i].finalGrade !== null) {
-                fg = document.createElement('p')
-                    .innerHTML = `
+                fg = document.createElement('p');
+                fg.innerHTML = `
                     <p class="fg">Final Grade: <span>${dataEval[i].finalGrade}</span></p>
                 `;
             }
-            var u = document.createElement('p')
-                .innerHTML = `
+            var u = document.createElement('p');
+            u.innerHTML = `
                     <p class="u">University: <span>${dataEval[i].university}</span></p>
                 `;
-            var ds = document.createElement('p')
-                .innerHTML = `
+            var ds = document.createElement('p');
+            ds.innerHTML = `
                     <p class="ds">Date Started: <span>${dataEval[i].dateStarted}</span></p>
                 `;
-            var de = document.createElement('p')
-                .innerHTML = `
+            var de = document.createElement('p');
+            de.innerHTML = `
                     <p class="de">Date Ended: <span>${dataEval[i].dateEnded}</span></p>
                 `;
-            var yt = document.createElement('p')
-                .innerHTML = `
+            var yt = document.createElement('p');
+            yt.innerHTML = `
                     <p class="yt">Years Took: <span>${dataEval[i].yearsTook}</span></p>
                 `;
 
