@@ -202,6 +202,8 @@ function content_extractor(href) {
         // Data Access Areas
         if (href === './contacts.html') {
             contactsImage();
+        } else if (href === './educ.html') {
+            education();
         }
 
         change_theme();
@@ -262,6 +264,59 @@ function contactsImage() {
                 <a href="${dataEval.socialMedias[j].url}">${dataEval.socialMedias[j].name}</a>
             `;
             targetSM.appendChild(newLi);
+        }
+    }).catch(err => {
+        console.log(err);
+    });
+}
+
+function education() {
+    var targetDiv = document.querySelector('#contents article');
+
+    fetch('./wwwroot/database/education-data.json').then(data => {
+        return data.json();
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            var c = null;
+            var fg = null;
+            var newSect = null;
+
+            if (dataEval[i].course !== null) {
+                c = document.createElement('p')
+                    .innerHTML = `
+                    <p class="c">Course: <span>${dataEval[i].course}</span></p>
+                `;
+            }
+            if (dataEval[i].finalGrade !== null) {
+                fg = document.createElement('p')
+                    .innerHTML = `
+                    <p class="fg">Final Grade: <span>${dataEval[i].finalGrade}</span></p>
+                `;
+            }
+            var u = document.createElement('p')
+                .innerHTML = `
+                    <p class="u">University: <span>${dataEval[i].university}</span></p>
+                `;
+            var ds = document.createElement('p')
+                .innerHTML = `
+                    <p class="ds">Date Started: <span>${dataEval[i].dateStarted}</span></p>
+                `;
+            var de = document.createElement('p')
+                .innerHTML = `
+                    <p class="de">Date Ended: <span>${dataEval[i].dateEnded}</span></p>
+                `;
+            var yt = document.createElement('p')
+                .innerHTML = `
+                    <p class="yt">Years Took: <span>${dataEval[i].yearsTook}</span></p>
+                `;
+
+            newSect = document.createElement('section');
+            if (c === null) newSect.append([u, ds, de, yt, fg]);
+            if (fg === null) newSect.append([c, u, ds, de, yt]);
+            if (c === null && fg === null) newSect.append([u, ds, de, yt]);
+            else newSect.append([c, u, ds, de, yt, fg]);
+
+            targetDiv.append(newSect);
         }
     }).catch(err => {
         console.log(err);
