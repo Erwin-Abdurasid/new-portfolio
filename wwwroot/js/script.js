@@ -271,7 +271,7 @@ function contactsImage() {
 }
 
 function education() {
-    var targetDiv = document.querySelector('#contents article');
+    var targetDiv = document.querySelector('#contents article section.educ');
 
     fetch('./wwwroot/database/education-data.json').then(data => {
         return data.json();
