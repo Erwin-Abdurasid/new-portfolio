@@ -107,6 +107,7 @@ function toggleTheme() {
 function change_theme() {
     var footer = document.querySelector('footer');
     var clouds = document.querySelectorAll('.cloud');
+    var themeBtn = document.querySelector('.theme input');
     var contents = document.querySelectorAll('#contents article');
     var detailedElems = document.querySelectorAll('#contents article section h3');
     var detailedElems2 = document.querySelectorAll('#contents article section p');
