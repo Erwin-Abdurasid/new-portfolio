@@ -269,6 +269,7 @@ function contactsImage() {
             `;
             targetSM.appendChild(newLi);
         }
+        change_theme();
     }).catch(err => {
         console.log(err);
     });
@@ -322,6 +323,7 @@ function education() {
 
             targetDiv.append(document.createElement('br'));
         }
+        change_theme();
     }).catch(err => {
         console.log(err);
     });
