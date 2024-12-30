@@ -170,6 +170,7 @@ function content_extractor(href) {
         header.insertAdjacentHTML('afterend', htmlSnippet);
         registerHrefs();
 
+        // Data Areas
         if (href === './contacts.html') {
             contactsImage();
         }
@@ -182,7 +183,6 @@ function content_extractor(href) {
 
 function content_remover() {
     var clouds = document.querySelectorAll('.cloud');
-    var backBtn = document.querySelector('img#back-btn');
     var contents = document.querySelector('div#contents');
 
     if (clouds !== null) {
@@ -194,6 +194,11 @@ function content_remover() {
     if (contents !== null) {
         contents.remove();
     }
+
+    // NOTE: Must be last!
+    //      Because possibly that in the area of contents,
+    //      it will be deleted.
+    var backBtn = document.querySelector('img#back-btn');
 
     if (backBtn !== null) {
         backBtn.remove();

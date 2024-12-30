@@ -233,7 +233,7 @@ footer {
 }
 
 #back-btn:hover {
-    transform: scaleX(1.2);
+    transform: scale(1.2);
 }
 
 #contents article section ul {
@@ -248,7 +248,7 @@ footer {
 
 #contents article section ul li a:hover {
     text-decoration: underline;
-    text-decoration-color: #000049;
+    text-decoration-color: #000099;
 }
 
 .cloud-name {
