@@ -238,6 +238,14 @@ footer {
     list-style: decimal;
 }
 
+#contents article section p {
+    font-weight: bold;
+}
+
+#contents article section p span {
+    font-weight: normal;
+}
+
 #contents article section ul li a {
     color: #000;
     text-decoration: none;
