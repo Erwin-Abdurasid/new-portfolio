@@ -72,7 +72,6 @@ function registerHrefs() {
                     break;
             }
 
-            content_remover();
             content_extractor(hrefData);
         });
     });
@@ -167,6 +166,7 @@ function content_extractor(href) {
             return res.text();
         }
     }).then(htmlSnippet => {
+        content_remover();
         header.insertAdjacentHTML('afterend', htmlSnippet);
         registerHrefs();
 
@@ -175,17 +175,19 @@ function content_extractor(href) {
         }
 
         change_theme();
+    }).catch(err => {
+        console.log(err);
     });
 }
 
 function content_remover() {
     var clouds = document.querySelectorAll('.cloud');
-    var backBtn = document.getElementById('back-btn');
-    var contents = document.getElementById('contents');
+    var backBtn = document.querySelector('img#back-btn');
+    var contents = document.querySelector('div#contents');
 
     if (clouds !== null) {
         clouds.forEach(element => {
-            element.remove()
+            element.remove();
         });
     }
 
