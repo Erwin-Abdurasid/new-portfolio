@@ -311,10 +311,10 @@ function education() {
                 `;
 
             newSect = document.createElement('section');
-            if (c === null) newSect.append([u, ds, de, yt, fg]);
-            if (fg === null) newSect.append([c, u, ds, de, yt]);
-            if (c === null && fg === null) newSect.append([u, ds, de, yt]);
-            else newSect.append([c, u, ds, de, yt, fg]);
+            if (c === null) newSect.append(u, ds, de, yt, fg);
+            if (fg === null) newSect.append(c, u, ds, de, yt);
+            if (c === null && fg === null) newSect.append(u, ds, de, yt);
+            else newSect.append(c, u, ds, de, yt, fg);
 
             targetDiv.append(newSect);
         }
