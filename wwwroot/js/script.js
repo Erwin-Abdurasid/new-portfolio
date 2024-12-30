@@ -113,54 +113,83 @@ function change_theme() {
     if (themeNav.contains(document.querySelector('.theme input:checked'))) {
         document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
         footer.style.color = '#72db70';
-        clouds.forEach(elem => {
-            elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
-        });
-        if (backBtn !== null) backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-light-svgrepo-com.svg');
-        contents.forEach(elem => {
-            elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
-        });
-        detailedElems.forEach(elem => {
-            elem.style.color = '#fff';
-        });
-        detailedElems2.forEach(elem => {
-            elem.style.color = '#fff';
-        });
-        detailedElems3.forEach(elem => {
-            elem.style.color = '#fff';
-        });
-        detailedElems4.forEach(elem => {
-            elem.style.color = '#fff';
-            elem.style.textDecorationColor = '#3737ee';
-        });
+
+        if (clouds !== null) {
+            clouds.forEach(elem => {
+                elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
+            });
+        }
+        if (backBtn !== null)
+            backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-light-svgrepo-com.svg');
+        if (contents !== null) {
+            contents.forEach(elem => {
+                elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
+            });
+        }
+        if (detailedElems !== null) {
+            detailedElems.forEach(elem => {
+                elem.style.color = '#fff';
+            });
+        }
+        if (detailedElems2 !== null) {
+            detailedElems2.forEach(elem => {
+                elem.style.color = '#fff';
+            });
+        }
+        if (detailedElems3 !== null) {
+            detailedElems3.forEach(elem => {
+                elem.style.color = '#fff';
+            });
+        }
+        if (detailedElems4 !== null) {
+            detailedElems4.forEach(elem => {
+                elem.style.color = '#fff';
+                elem.style.textDecorationColor = '#3737ee';
+            });
+        }
     } else {
         document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
         footer.style.color = '#126a12';
-        clouds.forEach(elem => {
-            elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
-        });
-        if (backBtn !== null) backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-dark-svgrepo-com.svg');
-        contents.forEach(elem => {
-            elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
-        });
-        detailedElems.forEach(elem => {
-            elem.style.color = '#000';
-        });
-        detailedElems2.forEach(elem => {
-            elem.style.color = '#000';
-        });
-        detailedElems3.forEach(elem => {
-            elem.style.color = '#000';
-        });
-        detailedElems4.forEach(elem => {
-            elem.style.color = '#000';
-            elem.style.textDecorationColor = '#000049';
-        });
+
+        if (clouds !== null) {
+            clouds.forEach(elem => {
+                elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
+            });
+        }
+        if (backBtn !== null)
+            backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-dark-svgrepo-com.svg');
+        if (contents !== null) {
+            contents.forEach(elem => {
+                elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
+            });
+        }
+        if (detailedElems !== null) {
+            detailedElems.forEach(elem => {
+                elem.style.color = '#000';
+            });
+        }
+        if (detailedElems2 !== null) {
+            detailedElems2.forEach(elem => {
+                elem.style.color = '#000';
+            });
+        }
+        if (detailedElems3 !== null) {
+            detailedElems3.forEach(elem => {
+                elem.style.color = '#000';
+            });
+        }
+        if (detailedElems4 !== null) {
+            detailedElems4.forEach(elem => {
+                elem.style.color = '#000';
+                elem.style.textDecorationColor = '#000049';
+            });
+        }
     }
 }
 
 function content_extractor(href) {
     var header = document.querySelector('header');
+
     fetch(href).then(res => {
         if (res.ok) {
             return res.text();
@@ -170,7 +199,7 @@ function content_extractor(href) {
         header.insertAdjacentHTML('afterend', htmlSnippet);
         registerHrefs();
 
-        // Data Areas
+        // Data Access Areas
         if (href === './contacts.html') {
             contactsImage();
         }
@@ -206,19 +235,17 @@ function content_remover() {
 }
 
 function contactsImage() {
-    var targetImgs = document.querySelectorAll('#contents article section.img img.img-prof');
-    var targetNames = document.querySelectorAll('#contents article section.img h3');
-    var targetPNs = document.querySelectorAll('#contents article section.contacts .pn');
-    var targetEAs = document.querySelectorAll('#contents article section.contacts .ea');
-    var targetULs = document.querySelectorAll('#contents article section.contacts ul');
+    var targetImg = document.querySelector('#contents article section.img img.img-prof');
+    var targetName = document.querySelector('#contents article section.img h3');
+    var targetPN = document.querySelector('#contents article section.contacts .pn');
+    var targetEA = document.querySelector('#contents article section.contacts .ea');
+    var targetSM = document.querySelector('#contents article section.contacts ul');
 
     fetch('./wwwroot/database/images-data.json').then(data => {
         return data.json();
     }).then(dataEval => {
-        for (let i = 0; i < dataEval.length; i++) {
-            targetImgs[i].setAttribute('src', dataEval[i].imgPath);
-            targetNames[i].innerHTML = dataEval[i].name;
-        }
+        targetImg.setAttribute('src', dataEval.imgPath);
+        targetName.innerHTML = dataEval.name;
     }).catch(err => {
         console.log(err);
     });
@@ -226,20 +253,15 @@ function contactsImage() {
     fetch('./wwwroot/database/contacts-data.json').then(data => {
         return data.json();
     }).then(dataEval => {
-        for (let i = 0; i < dataEval.length; i++) {
-            targetPNs[i].children[0].innerText = dataEval[i].phoneNumber;
-            targetEAs[i].children[0].innerText = dataEval[i].email;
+        targetPN.children[0].innerText = dataEval.phoneNumber;
+        targetEA.children[0].innerText = dataEval.email;
 
-            for (let j = 0; j < dataEval[i].socialMedias.length; j++) {
-                var newLi = document.createElement('li');
-                var newAnch = document.createElement('a');
-
-                newAnch.innerText = dataEval[i].socialMedias[j].name;
-                newAnch.setAttribute('href', dataEval[i].socialMedias[j].url);
-
-                newLi.appendChild(newAnch);
-                targetULs[i].appendChild(newLi);
-            }
+        for (let j = 0; j < dataEval.socialMedias.length; j++) {
+            var newLi = document.createElement('li');
+            newLi.innerHTML = `
+                <a href="${dataEval.socialMedias[j].url}">${dataEval.socialMedias[j].name}</a>
+            `;
+            targetSM.appendChild(newLi);
         }
     }).catch(err => {
         console.log(err);

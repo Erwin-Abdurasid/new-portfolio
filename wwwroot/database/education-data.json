@@ -1,0 +1,34 @@
+[
+    {
+        "course": "Bachelor of Science in Computer Science (BS ComSci/CS)",
+        "university": "Mindanao State University - Sulu (MSU-Sulu), College of Computer Studies Department (CCS)",
+        "dateStarted": "2018",
+        "dateEnded": "2022",
+        "yearsTook": 4,
+        "finalGrade": 1.77
+    },
+    {
+        "course": "Science, Technology, Engineering, and Mathematics (STEM)",
+        "university": "Mindanao State University - Sulu (MSU-Sulu), Senior High School Department",
+        "dateStarted": "2016",
+        "dateEnded": "2018",
+        "yearsTook": 2,
+        "finalGrade": null
+    },
+    {
+        "course": null,
+        "university": "Southwestern Mindanao Islamic Institute (SMII), High School Department",
+        "dateStarted": "2012",
+        "dateEnded": "2016",
+        "yearsTook": 4,
+        "finalGrade": null
+    },
+    {
+        "course": null,
+        "university": "Hadja Taiba Abubakar Schuck Elementary School (HTASES)",
+        "dateStarted": "2006",
+        "dateEnded": "2012",
+        "yearsTook": 6,
+        "finalGrade": null
+    }
+]
