@@ -197,7 +197,6 @@ function content_extractor(href) {
     }).then(htmlSnippet => {
         content_remover();
         header.insertAdjacentHTML('afterend', htmlSnippet);
-        registerHrefs();
 
         // Data Access Areas
         if (href === './contacts.html') {
@@ -206,6 +205,7 @@ function content_extractor(href) {
             education();
         }
 
+        registerHrefs();
         change_theme();
     }).catch(err => {
         console.log(err);
@@ -243,8 +243,10 @@ function contactsImage() {
     var targetEA = document.querySelector('#contents article section.contacts .ea');
     var targetSM = document.querySelector('#contents article section.contacts ul');
 
-    fetch('./wwwroot/database/images-data.json').then(data => {
-        return data.json();
+    fetch('./wwwroot/database/images-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
     }).then(dataEval => {
         targetImg.setAttribute('src', dataEval.imgPath);
         targetName.innerHTML = dataEval.name;
@@ -252,8 +254,10 @@ function contactsImage() {
         console.log(err);
     });
 
-    fetch('./wwwroot/database/contacts-data.json').then(data => {
-        return data.json();
+    fetch('./wwwroot/database/contacts-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
     }).then(dataEval => {
         targetPN.children[0].innerText = dataEval.phoneNumber;
         targetEA.children[0].innerText = dataEval.email;
@@ -273,8 +277,10 @@ function contactsImage() {
 function education() {
     var targetDiv = document.querySelector('#contents article section.educ');
 
-    fetch('./wwwroot/database/education-data.json').then(data => {
-        return data.json();
+    fetch('./wwwroot/database/education-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
     }).then(dataEval => {
         for (let i = 0; i < dataEval.length; i++) {
             var c = null;
