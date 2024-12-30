@@ -279,7 +279,6 @@ function education() {
         for (let i = 0; i < dataEval.length; i++) {
             var c = null;
             var fg = null;
-            var newSect = null;
 
             if (dataEval[i].course !== null) {
                 c = document.createElement('p');
@@ -310,13 +309,12 @@ function education() {
                     <p class="yt">Years Took: <span>${dataEval[i].yearsTook}</span></p>
                 `;
 
-            newSect = document.createElement('section');
-            if (c === null) newSect.append(u, ds, de, yt, fg);
-            if (fg === null) newSect.append(c, u, ds, de, yt);
-            if (c === null && fg === null) newSect.append(u, ds, de, yt);
-            else newSect.append(c, u, ds, de, yt, fg);
+            if (c === null && fg === null) targetDiv.append(u, ds, de, yt);
+            else if (c === null) targetDiv.append(u, ds, de, yt, fg);
+            else if (fg === null) targetDiv.append(c, u, ds, de, yt);
+            else targetDiv.append(c, u, ds, de, yt, fg);
 
-            targetDiv.append(newSect);
+            targetDiv.append('<br />');
         }
     }).catch(err => {
         console.log(err);
