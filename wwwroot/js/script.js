@@ -92,11 +92,10 @@ function downloadResumeAnimation() {
 }
 
 function toggleTheme() {
-    var themeNav = document.querySelector('.theme');
     var themeBtn = document.querySelector('.theme input');
 
     themeBtn.addEventListener('change', () => {
-        if (themeNav.contains(document.querySelector('.theme input:checked'))) {
+        if (themeBtn.checked === true) {
             localStorage.setItem('theme', 'night');
         } else {
             localStorage.setItem('theme', 'day');
@@ -116,6 +115,7 @@ function change_theme() {
     var backBtn = document.querySelector('#back-btn');
 
     if (localStorage.getItem('theme') === 'night') {
+        themeBtn.checked = true;
         document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
         footer.style.color = '#72db70';
 
@@ -153,6 +153,7 @@ function change_theme() {
             });
         }
     } else {
+        themeBtn.checked = false;
         document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
         footer.style.color = '#126a12';
 
