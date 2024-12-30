@@ -314,7 +314,7 @@ function education() {
             else if (fg === null) targetDiv.append(c, u, ds, de, yt);
             else targetDiv.append(c, u, ds, de, yt, fg);
 
-            targetDiv.append('<br />');
+            targetDiv.append(document.createElement('br'));
         }
     }).catch(err => {
         console.log(err);
