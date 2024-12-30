@@ -92,15 +92,20 @@ function downloadResumeAnimation() {
 }
 
 function toggleTheme() {
+    var themeNav = document.querySelector('.theme');
     var themeBtn = document.querySelector('.theme input');
 
     themeBtn.addEventListener('change', () => {
+        if (themeNav.contains(document.querySelector('.theme input:checked'))) {
+            localStorage.setItem('theme', 'night');
+        } else {
+            localStorage.setItem('theme', 'day');
+        }
         change_theme();
     });
 }
 
 function change_theme() {
-    var themeNav = document.querySelector('.theme');
     var footer = document.querySelector('footer');
     var clouds = document.querySelectorAll('.cloud');
     var contents = document.querySelectorAll('#contents article');
@@ -110,7 +115,7 @@ function change_theme() {
     var detailedElems4 = document.querySelectorAll('#contents article section ul li a');
     var backBtn = document.querySelector('#back-btn');
 
-    if (themeNav.contains(document.querySelector('.theme input:checked'))) {
+    if (localStorage.getItem('theme') === 'night') {
         document.body.style.background = 'linear-gradient(to bottom, #070B34, #141852, #2B2F77, #483475)';
         footer.style.color = '#72db70';
 
@@ -234,6 +239,14 @@ function content_remover() {
     if (backBtn !== null) {
         backBtn.remove();
     }
+}
+
+function registerBackBtn() {
+    var backBtn = document.querySelector('img#back-btn');
+
+    backBtn.addEventListener('click', () => {
+        content_extractor(sessionStorage.getItem('currentPage'));
+    });
 }
 
 function contactsImage() {
