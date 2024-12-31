@@ -389,6 +389,8 @@ function education() {
 }
 
 function workExperiences() {
+    let targetDiv = document.querySelector('#contents article section.works');
+
     fetch('./wwwroot/database/works-data.json').then(res => {
         if (res.ok) {
             return res.json();
