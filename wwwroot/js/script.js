@@ -279,6 +279,8 @@ function registerBackBtn() {
     }
 }
 
+// About Subpages Data
+
 function contactsImage() {
     let targetImg = document.querySelector('#contents article section.img img.img-prof');
     let targetName = document.querySelector('#contents article section.img h3');
@@ -537,3 +539,6 @@ function interests() {
         console.log(err);
     })
 }
+
+// Service Subpages Data
+

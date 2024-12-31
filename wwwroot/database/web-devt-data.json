@@ -1,0 +1,18 @@
+[
+    {
+        "name": "HTML/CSS/JS",
+        "category": "Frontend"
+    },
+    {
+        "name": "ASP.NET Core Blazor",
+        "category": "Frontend"
+    },
+    {
+        "name": "ASP.NET Core MVC",
+        "category": "Backend"
+    },
+    {
+        "name": "ASP.NET Core Razor Pages",
+        "category": "Backend"
+    }
+]
