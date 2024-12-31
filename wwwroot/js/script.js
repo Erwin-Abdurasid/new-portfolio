@@ -113,7 +113,7 @@ function change_theme() {
     var detailedElems2 = document.querySelectorAll('#contents article section p');
     var detailedElems3 = document.querySelectorAll('#contents article section ul li');
     var detailedElems4 = document.querySelectorAll('#contents article section ul li a');
-    var backBtn = document.querySelector('#back-btn');
+    var backBtnPaths = document.querySelectorAll('#back-btn path');
 
     if (localStorage.getItem('theme') === 'night') {
         themeBtn.checked = true;
@@ -125,8 +125,11 @@ function change_theme() {
                 elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
             });
         }
-        if (backBtn !== null)
-            backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-light-svgrepo-com.svg');
+        if (backBtnPaths !== null) {
+            backBtnPaths.forEach(path => {
+                path.setAttribute('fill', '#000000');
+            })
+        }
         if (contents !== null) {
             contents.forEach(elem => {
                 elem.style.background = 'radial-gradient(#000, #001, #011, #111)';
@@ -163,8 +166,11 @@ function change_theme() {
                 elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
             });
         }
-        if (backBtn !== null)
-            backBtn.setAttribute('src', 'wwwroot/icon/other-icons/back-dark-svgrepo-com.svg');
+        if (backBtnPaths !== null) {
+            backBtnPaths.forEach(path => {
+                path.setAttribute('fill', '#FFFFFF');
+            })
+        }
         if (contents !== null) {
             contents.forEach(elem => {
                 elem.style.background = 'radial-gradient(#fff, #ffe, #fee, #eee)';
@@ -236,7 +242,7 @@ function content_remover() {
     // NOTE: Must be last!
     //      Because possibly that in the area of contents,
     //      it will be deleted.
-    var backBtn = document.querySelector('img#back-btn');
+    var backBtn = document.querySelector('svg#back-btn');
 
     if (backBtn !== null) {
         backBtn.remove();
@@ -244,7 +250,7 @@ function content_remover() {
 }
 
 function registerBackBtn() {
-    var backBtn = document.querySelector('img#back-btn');
+    var backBtn = document.querySelector('svg#back-btn');
 
     backBtn.addEventListener('click', () => {
         content_extractor(sessionStorage.getItem('currentPage'));
