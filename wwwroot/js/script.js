@@ -246,6 +246,8 @@ function content_extractor(href) {
             mobaDevt();
         } else if (href === './subpages/database-management.html') {
             dataMngt();
+        } else if (href === './subpages/system-design.html') {
+            systemDesign();
         } else {
             change_theme();
         }
