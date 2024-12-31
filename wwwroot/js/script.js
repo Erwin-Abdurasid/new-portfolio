@@ -235,6 +235,16 @@ function content_extractor(href) {
             certs();
         } else if (href === './subpages/interests.html') {
             interests();
+        } else if (href === './subpages/services-programming.html') {
+            programming();
+        } else if (href === './subpages/services-deskdev.html') {
+            desktopDevt();
+        } else if (href === './subpages/services-webdev.html') {
+            webDevt();
+        } else if (href === './subpages/services-mobiledev.html') {
+            mobaDevt();
+        } else if (href === './subpages/database-management.html') {
+            dataMngt();
         } else {
             change_theme();
         }
@@ -544,3 +554,150 @@ function interests() {
 
 // Service Subpages Data
 
+function programming() {
+    let targetDiv = document.querySelector('#contents article section.programming');
+
+    fetch('./wwwroot/database/programming-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let n = document.createElement('p');
+            n.innerHTML = `
+                <p class="n">${dataEval[i]}</p>    
+            `;
+            targetDiv.append(n);
+        }
+        targetDiv.append(document.createElement('br'));
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
+function desktopDevt() {
+    let targetDiv = document.querySelector('#contents article section.desktopDevt');
+
+    fetch('./wwwroot/database/desktop-devt-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let n = document.createElement('p');
+            n.innerHTML = `
+                <p class="n">${dataEval[i].name}</p>    
+            `;
+            let c = document.createElement('p');
+            c.innerHTML = `
+                <p class="c">${dataEval[i].category}</p>    
+            `;
+            targetDiv.append(n, c);
+        }
+        targetDiv.append(document.createElement('br'));
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
+function webDevt() {
+    let targetDiv = document.querySelector('#contents article section.webDevt');
+
+    fetch('./wwwroot/database/web-devt-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let n = document.createElement('p');
+            n.innerHTML = `
+                <p class="n">${dataEval[i].name}</p>    
+            `;
+            let c = document.createElement('p');
+            c.innerHTML = `
+                <p class="c">${dataEval[i].category}</p>    
+            `;
+            targetDiv.append(n, c);
+        }
+        targetDiv.append(document.createElement('br'));
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    });
+}
+
+function mobaDevt() {
+    let targetDiv = document.querySelector('#contents article section.mobaDevt');
+
+    fetch('./wwwroot/database/mobile-devt-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let n = document.createElement('p');
+            n.innerHTML = `
+                <p class="n">${dataEval[i].name}</p>    
+            `;
+            let c = document.createElement('p');
+            c.innerHTML = `
+                <p class="c">${dataEval[i].category}</p>    
+            `;
+            targetDiv.append(n, c);
+        }
+        targetDiv.append(document.createElement('br'));
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    });
+}
+
+function dataMngt() {
+    let targetDiv = document.querySelector('#contents article section.dataMngt');
+
+    fetch('./wwwroot/database/data-mngt-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let n = document.createElement('p');
+            n.innerHTML = `
+                <p class="n">${dataEval[i].name}</p>    
+            `;
+            let c = document.createElement('p');
+            c.innerHTML = `
+                <p class="c">${dataEval[i].category}</p>    
+            `;
+            targetDiv.append(n, c);
+        }
+        targetDiv.append(document.createElement('br'));
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    });
+}
+
+function systemDesign() {
+    let targetDiv = document.querySelector('#contents article section.systemDesign');
+
+    fetch('./wwwroot/database/system-design-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let n = document.createElement('p');
+            n.innerHTML = `
+                <p class="n">${dataEval[i]}</p>    
+            `;
+            targetDiv.append(n);
+        }
+        targetDiv.append(document.createElement('br'));
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    });
+}
