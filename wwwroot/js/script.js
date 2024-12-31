@@ -1,6 +1,4 @@
-import Stack from "./wwwroot/js/custom-stack.js";
-
-const stack = new Stack();
+let stack = new Stack();
 
 window.onload = function () {
     js_responsibilities();
@@ -14,7 +12,7 @@ function js_responsibilities() {
 }
 
 function registerHrefs() {
-    var hrefSettings = document.querySelectorAll('.ref-setting');
+    let hrefSettings = document.querySelectorAll('.ref-setting');
 
     hrefSettings.forEach(el => {
         el.addEventListener('click', () => {
@@ -84,7 +82,7 @@ function registerHrefs() {
 }
 
 function downloadResumeAnimation() {
-    var downloadDiv = document.querySelector('.right-header a');
+    let downloadDiv = document.querySelector('.right-header a');
 
     downloadDiv.addEventListener('mousedown', () => {
         downloadDiv.classList.remove('unpinned');
@@ -98,7 +96,7 @@ function downloadResumeAnimation() {
 }
 
 function toggleTheme() {
-    var themeBtn = document.querySelector('.theme input');
+    let themeBtn = document.querySelector('.theme input');
 
     themeBtn.addEventListener('change', () => {
         if (themeBtn.checked === true) {
@@ -111,15 +109,15 @@ function toggleTheme() {
 }
 
 function change_theme() {
-    var footer = document.querySelector('footer');
-    var clouds = document.querySelectorAll('.cloud');
-    var themeBtn = document.querySelector('.theme input');
-    var contents = document.querySelectorAll('#contents article');
-    var detailedElems = document.querySelectorAll('#contents article section h3');
-    var detailedElems2 = document.querySelectorAll('#contents article section p');
-    var detailedElems3 = document.querySelectorAll('#contents article section ul li');
-    var detailedElems4 = document.querySelectorAll('#contents article section ul li a');
-    var backBtnPaths = document.querySelectorAll('#back-btn path');
+    let footer = document.querySelector('footer');
+    let clouds = document.querySelectorAll('.cloud');
+    let themeBtn = document.querySelector('.theme input');
+    let contents = document.querySelectorAll('#contents article');
+    let detailedElems = document.querySelectorAll('#contents article section h3');
+    let detailedElems2 = document.querySelectorAll('#contents article section p');
+    let detailedElems3 = document.querySelectorAll('#contents article section ul li');
+    let detailedElems4 = document.querySelectorAll('#contents article section ul li a');
+    let backBtnPaths = document.querySelectorAll('#back-btn path');
 
     if (localStorage.getItem('theme') === 'night') {
         themeBtn.checked = true;
@@ -207,7 +205,7 @@ function change_theme() {
 }
 
 function content_extractor(href) {
-    var header = document.querySelector('header');
+    let header = document.querySelector('header');
 
     fetch(href).then(res => {
         if (res.ok) {
@@ -233,8 +231,8 @@ function content_extractor(href) {
 }
 
 function content_remover() {
-    var clouds = document.querySelectorAll('.cloud');
-    var contents = document.querySelector('div#contents');
+    let clouds = document.querySelectorAll('.cloud');
+    let contents = document.querySelector('div#contents');
 
     if (clouds !== null) {
         clouds.forEach(element => {
@@ -249,7 +247,7 @@ function content_remover() {
     // NOTE: Must be last!
     //      Because possibly that in the area of contents,
     //      it will be deleted.
-    var backBtn = document.querySelector('svg#back-btn');
+    let backBtn = document.querySelector('svg#back-btn');
 
     if (backBtn !== null) {
         backBtn.remove();
@@ -257,7 +255,7 @@ function content_remover() {
 }
 
 function registerBackBtn() {
-    var backBtn = document.querySelector('svg#back-btn');
+    let backBtn = document.querySelector('svg#back-btn');
 
     backBtn.addEventListener('click', () => {
         stack.pop();
@@ -266,11 +264,11 @@ function registerBackBtn() {
 }
 
 function contactsImage() {
-    var targetImg = document.querySelector('#contents article section.img img.img-prof');
-    var targetName = document.querySelector('#contents article section.img h3');
-    var targetPN = document.querySelector('#contents article section.contacts .pn');
-    var targetEA = document.querySelector('#contents article section.contacts .ea');
-    var targetSM = document.querySelector('#contents article section.contacts ul');
+    let targetImg = document.querySelector('#contents article section.img img.img-prof');
+    let targetName = document.querySelector('#contents article section.img h3');
+    let targetPN = document.querySelector('#contents article section.contacts .pn');
+    let targetEA = document.querySelector('#contents article section.contacts .ea');
+    let targetSM = document.querySelector('#contents article section.contacts ul');
 
     fetch('./wwwroot/database/images-data.json').then(res => {
         if (res.ok) {
@@ -292,7 +290,7 @@ function contactsImage() {
         targetEA.children[0].innerText = dataEval.email;
 
         for (let j = 0; j < dataEval.socialMedias.length; j++) {
-            var newLi = document.createElement('li');
+            let newLi = document.createElement('li');
             newLi.innerHTML = `
                 <a href="${dataEval.socialMedias[j].url}">${dataEval.socialMedias[j].name}</a>
             `;
@@ -305,7 +303,7 @@ function contactsImage() {
 }
 
 function education() {
-    var targetDiv = document.querySelector('#contents article section.educ');
+    let targetDiv = document.querySelector('#contents article section.educ');
 
     fetch('./wwwroot/database/education-data.json').then(res => {
         if (res.ok) {
@@ -313,8 +311,8 @@ function education() {
         }
     }).then(dataEval => {
         for (let i = 0; i < dataEval.length; i++) {
-            var c = null;
-            var fg = null;
+            let c = null;
+            let fg = null;
 
             if (dataEval[i].course !== null) {
                 c = document.createElement('p');
@@ -328,19 +326,19 @@ function education() {
                     <p class="fg">Final Grade: <span>${dataEval[i].finalGrade}</span></p>
                 `;
             }
-            var u = document.createElement('p');
+            let u = document.createElement('p');
             u.innerHTML = `
                     <p class="u">University: <span>${dataEval[i].university}</span></p>
                 `;
-            var ds = document.createElement('p');
+            let ds = document.createElement('p');
             ds.innerHTML = `
                     <p class="ds">Date Started: <span>${dataEval[i].dateStarted}</span></p>
                 `;
-            var de = document.createElement('p');
+            let de = document.createElement('p');
             de.innerHTML = `
                     <p class="de">Date Ended: <span>${dataEval[i].dateEnded}</span></p>
                 `;
-            var yt = document.createElement('p');
+            let yt = document.createElement('p');
             yt.innerHTML = `
                     <p class="yt">Years Took: <span>${dataEval[i].yearsTook}</span></p>
                 `;
@@ -356,4 +354,34 @@ function education() {
     }).catch(err => {
         console.log(err);
     });
+}
+
+// Custom Class
+
+class Stack {
+    constructor() {
+        this.storage = {};
+        this.count = 0;
+    }
+
+    push(value) {
+        this.storage[this.count] = value;
+        this.count++;
+    }
+
+    pop() {
+        if (this.count === 0) {
+            return undefined;
+        }
+
+        this.count--;
+        let returnValue = this.storage[this.count];
+        delete this.storage[this.count];
+
+        return returnValue;
+    }
+
+    peek() {
+        return this.storage[this.count - 1];
+    }
 }
