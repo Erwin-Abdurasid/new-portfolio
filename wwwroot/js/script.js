@@ -1,39 +1,4 @@
-// Custom Classes
-
-class Stack {
-    constructor() {
-        this.storage = {};
-        this.count = 0;
-    }
-
-    push(value) {
-        this.storage[this.count] = value;
-        this.count++;
-    }
-
-    pop() {
-        if (this.count === 0) {
-            return undefined;
-        }
-
-        this.count--;
-        let returnValue = this.storage[this.count];
-        delete this.storage[this.count];
-
-        return returnValue;
-    }
-
-    peek() {
-        return this.storage[this.count - 1];
-    }
-
-    clear() {
-        this.storage = {};
-        this.count = 0;
-    }
-}
-
-// Logics
+import Stack from './custom-stack';
 
 let stack = new Stack();
 
@@ -321,7 +286,7 @@ function contactsImage() {
     let targetEA = document.querySelector('#contents article section.contacts .ea');
     let targetSM = document.querySelector('#contents article section.contacts ul');
 
-    fetch('./wwwroot/database/images-data.json').then(res => {
+    fetch('./wwwroot/database/image-data.json').then(res => {
         if (res.ok) {
             return res.json();
         }
