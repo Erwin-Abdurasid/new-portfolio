@@ -10,6 +10,7 @@ function js_responsibilities() {
     content_extractor('./subpages/home.html');
     downloadResumeAnimation();
     toggleTheme();
+    stack.push('./subpages/home.html');
 }
 
 function registerHrefs() {
@@ -76,6 +77,7 @@ function registerHrefs() {
                     break;
             }
 
+            stack.push(hrefData);
             content_extractor(hrefData);
         });
     });
@@ -206,7 +208,6 @@ function change_theme() {
 
 function content_extractor(href) {
     let header = document.querySelector('header');
-    stack.push(href);
 
     fetch(href).then(res => {
         if (res.ok) {
@@ -220,7 +221,6 @@ function content_extractor(href) {
         if (href === './subpages/home.html') {
             change_theme();
             stack.clear();
-            stack.push(href);
         } else if (href === './subpages/contacts.html') {
             contactsImage();
         } else if (href === './subpages/educ.html') {
