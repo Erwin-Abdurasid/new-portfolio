@@ -127,7 +127,7 @@ function change_theme() {
         }
         if (backBtnPaths !== null) {
             backBtnPaths.forEach(path => {
-                path.setAttribute('fill', '#000000');
+                path.setAttribute('fill', '#FFFFFF');
             })
         }
         if (contents !== null) {
@@ -168,7 +168,7 @@ function change_theme() {
         }
         if (backBtnPaths !== null) {
             backBtnPaths.forEach(path => {
-                path.setAttribute('fill', '#FFFFFF');
+                path.setAttribute('fill', '#000000');
             })
         }
         if (contents !== null) {
