@@ -1,4 +1,4 @@
-import Stack from './custom-stack';
+import Stack from './custom-stack.js';
 
 let stack = new Stack();
 
