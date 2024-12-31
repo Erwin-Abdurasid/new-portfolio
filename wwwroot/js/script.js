@@ -289,10 +289,12 @@ function content_remover() {
 function registerBackBtn() {
     let backBtn = document.querySelector('svg#back-btn');
 
-    backBtn.addEventListener('click', () => {
-        stack.pop();
-        content_extractor(stack.peek());
-    });
+    if (backBtn !== null) {
+        backBtn.addEventListener('click', () => {
+            stack.pop();
+            content_extractor(stack.peek());
+        });
+    }
 }
 
 function contactsImage() {
