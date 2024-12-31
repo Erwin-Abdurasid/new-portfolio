@@ -1,0 +1,132 @@
+[
+    {
+        "name": "C#",
+        "category": "Technical Skill",
+        "proficiency": "Expert"
+    },
+    {
+        "name": "Visual Basic .NET",
+        "category": "Technical Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "C/C++",
+        "category": "Technical Skill",
+        "proficiency": "Intermediate"
+    },
+    {
+        "name": "Python",
+        "category": "Technical Skill",
+        "proficiency": "Intermediate"
+    },
+    {
+        "name": "HTML/CSS/JS",
+        "category": "Technical Skill",
+        "proficiency": "Expert"
+    },
+    {
+        "name": "SQL/T-SQL",
+        "category": "Technical Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "Flowchart",
+        "category": "Technical Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "UML Diagrams",
+        "category": "Technical Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "ASP.NET/ Core",
+        "category": "Technical Skill",
+        "proficiency": "Expert"
+    },
+    {
+        "name": "WinForms",
+        "category": "Technical Skill",
+        "proficiency": "Expert"
+    },
+    {
+        "name": ".NET MAUI",
+        "category": "Technical Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "Programming",
+        "category": "Hard Skill",
+        "proficiency": "Expert"
+    },
+    {
+        "name": "Web Development",
+        "category": "Hard Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "Desktop App Development",
+        "category": "Hard Skill",
+        "proficiency": "Expert"
+    },
+    {
+        "name": "Mobile App Development",
+        "category": "Hard Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "Database Management",
+        "category": "Hard Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "System Design",
+        "category": "Hard Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "Problem-solving",
+        "category": "Soft Skill",
+        "proficiency": "Intermediate"
+    },
+    {
+        "name": "Analyzing",
+        "category": "Soft Skill",
+        "proficiency": "Expert"
+    },
+    {
+        "name": "Leadership",
+        "category": "Soft Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "Mission-driven",
+        "category": "Soft Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "Adventurous",
+        "category": "Soft Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "Patience",
+        "category": "Soft Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "Empathy",
+        "category": "Soft Skill",
+        "proficiency": "Advanced"
+    },
+    {
+        "name": "Organization",
+        "category": "Soft Skill",
+        "proficiency": "Expert"
+    },
+    {
+        "name": "Creativity",
+        "category": "Soft Skill",
+        "proficiency": "Advanced"
+    }
+]

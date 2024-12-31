@@ -254,10 +254,11 @@ function content_extractor(href) {
             education();
         } else if (href === './works.html') {
             workExperiences();
+        } else {
+            change_theme();
         }
 
         registerBackBtn();
-        change_theme();
         registerHrefs();
     }).catch(err => {
         console.log(err);
@@ -418,7 +419,7 @@ function workExperiences() {
                     <p class="yt">Years Took: <span>${dataEval[i].yearsTook}</span></p>
                 `;
             let rpbl = document.createElement('p');
-            rpbl.innerText = 'Responsibilities';
+            rpbl.innerText = 'Responsibilities:';
             let responsibilities = document.createElement('ul');
 
             for (let j = 0; j < dataEval[i].responsibilities.length; j++) {
@@ -428,6 +429,37 @@ function workExperiences() {
             }
 
             targetDiv.append(r, e, ja, d, yt, rpbl, responsibilities);
+            targetDiv.append(document.createElement('br'));
+        }
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
+function skills() {
+    let targetDiv = document.querySelector('#contents article section.skills');
+
+    fetch('./wwwroot/database/skills-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let n = document.createElement('p');
+            n.innerHTML = `
+                    <p class="n">${dataEval[i].name}</p>
+                `;
+            let c = document.createElement('p');
+            c.innerHTML = `
+                    <p class="c">Category: <span>${dataEval[i].category}</span></p>
+                `;
+            let p = document.createElement('p');
+            p.innerHTML = `
+                    <p class="ja">Proficiency: <span>${dataEval[i].proficiency}</span></p>
+                `;
+
+            targetDiv.append(n, c, p);
             targetDiv.append(document.createElement('br'));
         }
         change_theme();
