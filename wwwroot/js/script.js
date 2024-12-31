@@ -253,7 +253,10 @@ function content_extractor(href) {
         header.insertAdjacentHTML('afterend', htmlSnippet);
 
         // Data Access Areas
-        if (href === './contacts.html') {
+        if (href === './home.html') {
+            change_theme();
+            stack.clear();
+        } else if (href === './contacts.html') {
             contactsImage();
         } else if (href === './educ.html') {
             education();
@@ -267,7 +270,6 @@ function content_extractor(href) {
             interests();
         } else {
             change_theme();
-            stack.clear();
         }
 
         registerBackBtn();
