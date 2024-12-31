@@ -375,10 +375,10 @@ function education() {
                     <p class="yt">Years Took: <span>${dataEval[i].yearsTook}</span></p>
                 `;
 
-            if (c === null && fg === null) targetDiv.append(u, ds, de, yt);
-            else if (c === null) targetDiv.append(u, ds, de, yt, fg);
-            else if (fg === null) targetDiv.append(c, u, ds, de, yt);
-            else targetDiv.append(c, u, ds, de, yt, fg);
+            if (c === null && fg === null) targetDiv.append(u, d, yt);
+            else if (c === null) targetDiv.append(u, d, yt, fg);
+            else if (fg === null) targetDiv.append(c, u, d, yt);
+            else targetDiv.append(c, u, d, yt, fg);
 
             targetDiv.append(document.createElement('br'));
         }
