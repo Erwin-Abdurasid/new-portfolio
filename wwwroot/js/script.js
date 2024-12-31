@@ -1,4 +1,4 @@
-import Stack from "./wwwroot/js/custom-stack";
+import Stack from "./wwwroot/js/custom-stack.js";
 
 const stack = new Stack();
 
