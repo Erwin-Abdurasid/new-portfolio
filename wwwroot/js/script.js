@@ -252,6 +252,8 @@ function content_extractor(href) {
             contactsImage();
         } else if (href === './educ.html') {
             education();
+        } else if (href === './works.html') {
+            workExperiences();
         }
 
         registerBackBtn();
@@ -364,13 +366,9 @@ function education() {
             u.innerHTML = `
                     <p class="u">University: <span>${dataEval[i].university}</span></p>
                 `;
-            let ds = document.createElement('p');
-            ds.innerHTML = `
-                    <p class="ds">Date Started: <span>${dataEval[i].dateStarted}</span></p>
-                `;
-            let de = document.createElement('p');
-            de.innerHTML = `
-                    <p class="de">Date Ended: <span>${dataEval[i].dateEnded}</span></p>
+            let d = document.createElement('p');
+            d.innerHTML = `
+                    <p class="ds">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>
                 `;
             let yt = document.createElement('p');
             yt.innerHTML = `
@@ -388,4 +386,50 @@ function education() {
     }).catch(err => {
         console.log(err);
     });
+}
+
+function workExperiences() {
+    fetch('./wwwroot/database/works-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let r = document.createElement('p');
+            r.innerHTML = `
+                    <p class="r">${dataEval[i].role}</p>
+                `;
+            let e = document.createElement('p');
+            e.innerHTML = `
+                    <p class="e">Employer: <span>${dataEval[i].employer}</span></p>
+                `;
+            let ja = document.createElement('p');
+            ja.innerHTML = `
+                    <p class="ja">Job Address: <span>${dataEval[i].jobAddress}</span></p>
+                `;
+            let d = document.createElement('p');
+            d.innerHTML = `
+                    <p class="d">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>
+                `;
+            let yt = document.createElement('p');
+            yt.innerHTML = `
+                    <p class="yt">Years Took: <span>${dataEval[i].yearsTook}</span></p>
+                `;
+            let rpbl = document.createElement('p');
+            rpbl.innerText = 'Responsibilities';
+            let responsibilities = document.createElement('ul');
+
+            for (let j = 0; j < dataEval[i].responsibilities.length; j++) {
+                let newLi = document.createElement('li');
+                newLi.innerText = dataEval[i].responsibilities[j];
+                responsibilities.appendChild(newLi);
+            }
+
+            targetDiv.append(r, e, ja, d, yt, rpbl, responsibilities);
+            targetDiv.append(document.createElement('br'));
+        }
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    })
 }
