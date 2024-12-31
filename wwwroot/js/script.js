@@ -256,6 +256,8 @@ function content_extractor(href) {
             workExperiences();
         } else if (href === './skills.html') {
             skills();
+        } else if (href === './certs.html') {
+            certs();
         } else {
             change_theme();
         }
@@ -487,6 +489,50 @@ function skills() {
                 softSkills.append(n, p);
                 softSkills.append(document.createElement('br'));
             }
+        }
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
+function certs() {
+    let targetDiv = document.querySelector('#contents article section.certs');
+
+    fetch('./wwwroot/database/certs-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let t = document.createElement('p');
+            t.innerHTML = `
+                        <p class="t">${dataEval[i].title}</p>
+                    `;
+            let c = document.createElement('p');
+            c.innerHTML = `
+                        <p class="c">Conducted By: <span>${dataEval[i].conductor}</span></p>
+                    `;
+            let d = document.createElement('p');
+            d.innerHTML = `
+                        <p class="d">Date: <span>${dataEval[i].date}</span></p>
+                    `;
+            if (dataEval[i].hours !== null) {
+                let h = document.createElement('p');
+                h.innerHTML = `
+                            <p class="h">Hours: <span>${dataEval[i].hours}</span></p>
+                        `;
+            }
+            let a = document.createElement('p');
+            a.innerHTML = `
+                            <p class="a">Address: <span>${(dataEval[i].isVirtual ? "Virtual" : dataEval[i].address)}</span></p>
+                        `;
+
+            if (dataEval[i].hours !== null) {
+                targetDiv.append(t, c, d, h, a);
+            }
+            targetDiv.append(t, c, d, a);
+            targetDiv.append(document.createElement('br'));
         }
         change_theme();
     }).catch(err => {
