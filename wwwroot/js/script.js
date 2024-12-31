@@ -1,3 +1,7 @@
+import Stack from "./custom-stack";
+
+const stack = new Stack();
+
 window.onload = function () {
     js_responsibilities();
 }
@@ -6,6 +10,7 @@ function js_responsibilities() {
     content_extractor('./home.html');
     downloadResumeAnimation();
     toggleTheme();
+    stack.push('./home.html');
 }
 
 function registerHrefs() {
@@ -72,6 +77,7 @@ function registerHrefs() {
                     break;
             }
 
+            stack.push(hrefData);
             content_extractor(hrefData);
         });
     });
@@ -218,8 +224,9 @@ function content_extractor(href) {
             education();
         }
 
-        registerHrefs();
+        registerBackBtn();
         change_theme();
+        registerHrefs();
     }).catch(err => {
         console.log(err);
     });
@@ -253,7 +260,8 @@ function registerBackBtn() {
     var backBtn = document.querySelector('svg#back-btn');
 
     backBtn.addEventListener('click', () => {
-        content_extractor(sessionStorage.getItem('currentPage'));
+        stack.pop();
+        content_extractor(stack.peek());
     });
 }
 
