@@ -223,6 +223,7 @@ function content_extractor(href) {
         if (href === './subpages/home.html') {
             change_theme();
             stack.clear();
+            stack.push(href);
         } else if (href === './subpages/contacts.html') {
             contactsImage();
         } else if (href === './subpages/educ.html') {
@@ -594,8 +595,8 @@ function desktopDevt() {
                 <p class="c">Category: <span>${dataEval[i].category}</span></p>    
             `;
             targetDiv.append(n, c);
+            targetDiv.append(document.createElement('br'));
         }
-        targetDiv.append(document.createElement('br'));
         change_theme();
     }).catch(err => {
         console.log(err);
@@ -620,8 +621,8 @@ function webDevt() {
                 <p class="c">Category: <span>${dataEval[i].category}</span></p>    
             `;
             targetDiv.append(n, c);
+            targetDiv.append(document.createElement('br'));
         }
-        targetDiv.append(document.createElement('br'));
         change_theme();
     }).catch(err => {
         console.log(err);
@@ -646,8 +647,8 @@ function mobaDevt() {
                 <p class="c">Category: <span>${dataEval[i].category}</span></p>    
             `;
             targetDiv.append(n, c);
+            targetDiv.append(document.createElement('br'));
         }
-        targetDiv.append(document.createElement('br'));
         change_theme();
     }).catch(err => {
         console.log(err);
@@ -672,8 +673,8 @@ function dataMngt() {
                 <p class="c">Category: <span>${dataEval[i].category}</span></p>    
             `;
             targetDiv.append(n, c);
+            targetDiv.append(document.createElement('br'));
         }
-        targetDiv.append(document.createElement('br'));
         change_theme();
     }).catch(err => {
         console.log(err);
