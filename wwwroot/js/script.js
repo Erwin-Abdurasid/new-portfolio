@@ -505,6 +505,8 @@ function certs() {
         }
     }).then(dataEval => {
         for (let i = 0; i < dataEval.length; i++) {
+            let h = null;
+
             let t = document.createElement('p');
             t.innerHTML = `
                         <p class="t">${dataEval[i].title}</p>
@@ -518,7 +520,7 @@ function certs() {
                         <p class="d">Date: <span>${dataEval[i].date}</span></p>
                     `;
             if (dataEval[i].hours !== null) {
-                let h = document.createElement('p');
+                h = document.createElement('p');
                 h.innerHTML = `
                             <p class="h">Hours: <span>${dataEval[i].hours}</span></p>
                         `;
@@ -528,10 +530,9 @@ function certs() {
                             <p class="a">Address: <span>${(dataEval[i].isVirtual ? "Virtual" : dataEval[i].address)}</span></p>
                         `;
 
-            if (dataEval[i].hours !== null) {
-                targetDiv.append(t, c, d, h, a);
-            }
-            targetDiv.append(t, c, d, a);
+            if (h === null) targetDiv.append(t, c, d, a);
+            else targetDiv.append(t, c, d, h, a);
+
             targetDiv.append(document.createElement('br'));
         }
         change_theme();
