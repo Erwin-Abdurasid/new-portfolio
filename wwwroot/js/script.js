@@ -254,6 +254,8 @@ function content_extractor(href) {
             education();
         } else if (href === './works.html') {
             workExperiences();
+        } else if (href === './skills.html') {
+            skills();
         } else {
             change_theme();
         }
@@ -456,7 +458,7 @@ function skills() {
                 `;
             let p = document.createElement('p');
             p.innerHTML = `
-                    <p class="ja">Proficiency: <span>${dataEval[i].proficiency}</span></p>
+                    <p class="p">Proficiency: <span>${dataEval[i].proficiency}</span></p>
                 `;
 
             targetDiv.append(n, c, p);
