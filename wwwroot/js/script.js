@@ -7,10 +7,12 @@ window.onload = function () {
 }
 
 function js_responsibilities() {
-    content_extractor('./subpages/home.html');
+    let href = './subpages/home.html';
+
+    content_extractor(href);
     downloadResumeAnimation();
     toggleTheme();
-    stack.push('./subpages/home.html');
+    stack.push(href);
 }
 
 function registerHrefs() {
