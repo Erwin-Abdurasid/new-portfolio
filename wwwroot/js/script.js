@@ -591,7 +591,7 @@ function desktopDevt() {
             `;
             let c = document.createElement('p');
             c.innerHTML = `
-                <p class="c">${dataEval[i].category}</p>    
+                <p class="c">Category: <span>${dataEval[i].category}</span></p>    
             `;
             targetDiv.append(n, c);
         }
@@ -617,7 +617,7 @@ function webDevt() {
             `;
             let c = document.createElement('p');
             c.innerHTML = `
-                <p class="c">${dataEval[i].category}</p>    
+                <p class="c">Category: <span>${dataEval[i].category}</span></p>    
             `;
             targetDiv.append(n, c);
         }
@@ -643,7 +643,7 @@ function mobaDevt() {
             `;
             let c = document.createElement('p');
             c.innerHTML = `
-                <p class="c">${dataEval[i].category}</p>    
+                <p class="c">Category: <span>${dataEval[i].category}</span></p>    
             `;
             targetDiv.append(n, c);
         }
@@ -669,7 +669,7 @@ function dataMngt() {
             `;
             let c = document.createElement('p');
             c.innerHTML = `
-                <p class="c">${dataEval[i].category}</p>    
+                <p class="c">Category: <span>${dataEval[i].category}</span></p>    
             `;
             targetDiv.append(n, c);
         }
