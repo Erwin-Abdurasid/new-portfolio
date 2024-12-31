@@ -24,6 +24,7 @@ function registerHrefs() {
 
             switch (el.dataset.ref) {
                 case '/':
+                    stack.clear();
                     hrefData = './subpages/home.html';
                     break;
                 case '/projects':
@@ -220,11 +221,7 @@ function content_extractor(href) {
         header.insertAdjacentHTML('afterend', htmlSnippet);
 
         // Data Access Areas
-        if (href === './subpages/home.html') {
-            change_theme();
-            stack.clear();
-            stack.push(href);
-        } else if (href === './subpages/contacts.html') {
+        if (href === './subpages/contacts.html') {
             contactsImage();
         } else if (href === './subpages/educ.html') {
             education();
