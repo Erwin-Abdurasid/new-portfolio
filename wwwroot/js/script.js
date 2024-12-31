@@ -42,10 +42,10 @@ window.onload = function () {
 }
 
 function js_responsibilities() {
-    content_extractor('./home.html');
+    content_extractor('./subpages/home.html');
     downloadResumeAnimation();
     toggleTheme();
-    stack.push('./home.html');
+    stack.push('./subpages/home.html');
 }
 
 function registerHrefs() {
@@ -57,58 +57,58 @@ function registerHrefs() {
 
             switch (el.dataset.ref) {
                 case '/':
-                    hrefData = './home.html';
+                    hrefData = './subpages/home.html';
                     break;
                 case '/projects':
-                    hrefData = './projects.html';
+                    hrefData = './subpages/projects.html';
                     break;
                 case '/projects-B':
-                    hrefData = './best-projects.html';
+                    hrefData = './subpages/best-projects.html';
                     break;
                 case '/projects-S':
-                    hrefData = './simple-projects.html';
+                    hrefData = './subpages/simple-projects.html';
                     break;
                 case '/services':
-                    hrefData = './services.html';
+                    hrefData = './subpages/services.html';
                     break;
                 case '/programming':
-                    hrefData = './services-programming.html';
+                    hrefData = './subpages/services-programming.html';
                     break;
                 case '/desk-devt':
-                    hrefData = './services-deskdev.html';
+                    hrefData = './subpages/services-deskdev.html';
                     break;
                 case '/web-devt':
-                    hrefData = './services-webdev.html';
+                    hrefData = './subpages/services-webdev.html';
                     break;
                 case '/mobile-devt':
-                    hrefData = './services-mobiledev.html';
+                    hrefData = './subpages/services-mobiledev.html';
                     break;
                 case '/data-mngt':
-                    hrefData = './database-management.html';
+                    hrefData = './subpages/database-management.html';
                     break;
                 case '/system-design':
-                    hrefData = './system-design.html';
+                    hrefData = './subpages/system-design.html';
                     break;
                 case '/about':
-                    hrefData = './about.html';
+                    hrefData = './subpages/about.html';
                     break;
                 case '/contacts':
-                    hrefData = './contacts.html';
+                    hrefData = './subpages/contacts.html';
                     break;
                 case '/educ':
-                    hrefData = './educ.html';
+                    hrefData = './subpages/educ.html';
                     break;
                 case '/works':
-                    hrefData = './works.html';
+                    hrefData = './subpages/works.html';
                     break;
                 case '/skills':
-                    hrefData = './skills.html';
+                    hrefData = './subpages/skills.html';
                     break;
                 case '/certs':
-                    hrefData = './certs.html';
+                    hrefData = './subpages/certs.html';
                     break;
                 case '/interests':
-                    hrefData = './interests.html';
+                    hrefData = './subpages/interests.html';
                     break;
             }
 
@@ -253,20 +253,20 @@ function content_extractor(href) {
         header.insertAdjacentHTML('afterend', htmlSnippet);
 
         // Data Access Areas
-        if (href === './home.html') {
+        if (href === './subpages/home.html') {
             change_theme();
             stack.clear();
-        } else if (href === './contacts.html') {
+        } else if (href === './subpages/contacts.html') {
             contactsImage();
-        } else if (href === './educ.html') {
+        } else if (href === './subpages/educ.html') {
             education();
-        } else if (href === './works.html') {
+        } else if (href === './subpages/works.html') {
             workExperiences();
-        } else if (href === './skills.html') {
+        } else if (href === './subpages/skills.html') {
             skills();
-        } else if (href === './certs.html') {
+        } else if (href === './subpages/certs.html') {
             certs();
-        } else if (href === './interests.html') {
+        } else if (href === './subpages/interests.html') {
             interests();
         } else {
             change_theme();
