@@ -26,6 +26,11 @@ class Stack {
     peek() {
         return this.storage[this.count - 1];
     }
+
+    clear() {
+        this.storage = {};
+        this.count = 0;
+    }
 }
 
 // Logics
@@ -258,8 +263,11 @@ function content_extractor(href) {
             skills();
         } else if (href === './certs.html') {
             certs();
+        } else if (href === './interests.html') {
+            interests();
         } else {
             change_theme();
+            stack.clear();
         }
 
         registerBackBtn();
@@ -535,6 +543,28 @@ function certs() {
 
             targetDiv.append(document.createElement('br'));
         }
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    })
+}
+
+function interests() {
+    let targetDiv = document.querySelector('#contents article section.interests');
+
+    fetch('./wwwroot/database/interests-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let el = document.createElement('p');
+            el.innerHTML = `
+                <p class="n">${dataEval[i]}</p>    
+            `;
+            targetDiv.append(el);
+        }
+        targetDiv.append(document.createElement('br'));
         change_theme();
     }).catch(err => {
         console.log(err);
