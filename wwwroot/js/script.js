@@ -440,7 +440,9 @@ function workExperiences() {
 }
 
 function skills() {
-    let targetDiv = document.querySelector('#contents article section.skills');
+    let techSkills = document.querySelector('#contents article section.t-skills');
+    let hardSkills = document.querySelector('#contents article section.h-skills');
+    let softSkills = document.querySelector('#contents article section.s-skills');
 
     fetch('./wwwroot/database/skills-data.json').then(res => {
         if (res.ok) {
@@ -448,21 +450,43 @@ function skills() {
         }
     }).then(dataEval => {
         for (let i = 0; i < dataEval.length; i++) {
-            let n = document.createElement('p');
-            n.innerHTML = `
-                    <p class="n">${dataEval[i].name}</p>
-                `;
-            let c = document.createElement('p');
-            c.innerHTML = `
-                    <p class="c">Category: <span>${dataEval[i].category}</span></p>
-                `;
-            let p = document.createElement('p');
-            p.innerHTML = `
-                    <p class="p">Proficiency: <span>${dataEval[i].proficiency}</span></p>
-                `;
+            if (dataEval[i].category === 'Technical Skill') {
+                let n = document.createElement('p');
+                n.innerHTML = `
+                        <p class="n">${dataEval[i].name}</p>
+                    `;
+                let p = document.createElement('p');
+                p.innerHTML = `
+                        <p class="p">Proficiency: <span>${dataEval[i].proficiency}</span></p>
+                    `;
 
-            targetDiv.append(n, c, p);
-            targetDiv.append(document.createElement('br'));
+                techSkills.append(n, p);
+                techSkills.append(document.createElement('br'));
+            } else if (dataEval[i].category === 'Hard Skill') {
+                let n = document.createElement('p');
+                n.innerHTML = `
+                        <p class="n">${dataEval[i].name}</p>
+                    `;
+                let p = document.createElement('p');
+                p.innerHTML = `
+                        <p class="p">Proficiency: <span>${dataEval[i].proficiency}</span></p>
+                    `;
+
+                hardSkills.append(n, p);
+                hardSkills.append(document.createElement('br'));
+            } else if (dataEval[i].category === 'Soft Skill') {
+                let n = document.createElement('p');
+                n.innerHTML = `
+                        <p class="n">${dataEval[i].name}</p>
+                    `;
+                let p = document.createElement('p');
+                p.innerHTML = `
+                        <p class="p">Proficiency: <span>${dataEval[i].proficiency}</span></p>
+                    `;
+
+                softSkills.append(n, p);
+                softSkills.append(document.createElement('br'));
+            }
         }
         change_theme();
     }).catch(err => {
