@@ -235,7 +235,7 @@ footer {
 
 #contents article section ul {
     margin-left: 50px;
-    list-style: decimal;
+    list-style: symbols('- ');
 }
 
 #contents article section p {

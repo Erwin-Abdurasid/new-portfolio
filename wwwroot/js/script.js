@@ -744,7 +744,7 @@ function simpleProjects() {
             `;
             let src = document.createElement('p');
             src.innerHTML = `
-                <p class="src">Source Codes: <span>${dataEval[i].src}</span></p>    
+                <p class="src">Source Codes: <span>${(dataEval[i].src === null ? "Unavailable" : dataEval[i].src)}</span></p>    
             `;
             let d = document.createElement('p');
             d.innerHTML = `
@@ -752,6 +752,7 @@ function simpleProjects() {
             `;
             if (dataEval[i].updates !== null) {
                 us = document.createElement('ul');
+                us.innerText = 'Updates:';
                 for (let j = 0; j < dataEval[i].updates.length; j++) {
                     let li = document.createElement('li');
                     li.innerHTML = `
@@ -796,7 +797,7 @@ function bestProjects() {
             `;
             let src = document.createElement('p');
             src.innerHTML = `
-                <p class="src">Source Codes: <span>${dataEval[i].src}</span></p>    
+                <p class="src">Source Codes: <span>${(dataEval[i].src === null ? "Unavailable" : dataEval[i].src)}</span></p>    
             `;
             let d = document.createElement('p');
             d.innerHTML = `
@@ -804,6 +805,7 @@ function bestProjects() {
             `;
             if (dataEval[i].updates !== null) {
                 us = document.createElement('ul');
+                us.innerText = 'Updates:';
                 for (let j = 0; j < dataEval[i].updates.length; j++) {
                     let li = document.createElement('li');
                     li.innerHTML = `
