@@ -1,0 +1,52 @@
+[
+    {
+        "name": "New Portfolio Website",
+        "dateStarted": "December 2024",
+        "updates": null,
+        "dateEnded": "December 2024",
+        "description": "",
+        "status": "Development",
+        "version": "1.0.0",
+        "src": ""
+    },
+    {
+        "name": "Computer Student Simple Management System",
+        "dateStarted": "September 2024",
+        "updates": null,
+        "dateEnded": "October 2024",
+        "description": "",
+        "status": "Incomplete",
+        "version": "1.0.0",
+        "src": ""
+    },
+    {
+        "name": "TechWannabe Pet Collections",
+        "dateStarted": "2023",
+        "updates": null,
+        "dateEnded": "2023",
+        "description": "",
+        "status": "Completed",
+        "version": "1.0.0",
+        "src": ""
+    },
+    {
+        "name": "Porfolio Website",
+        "dateStarted": "2022",
+        "updates": null,
+        "dateEnded": "2022",
+        "description": "",
+        "status": "Completed",
+        "version": "1.0.0",
+        "src": ""
+    },
+    {
+        "name": "NumSys-C Mobile Application",
+        "dateStarted": "2022",
+        "updates": null,
+        "dateEnded": "2022",
+        "description": "",
+        "status": "Completed",
+        "version": "1.0.0",
+        "src": null
+    }
+]
