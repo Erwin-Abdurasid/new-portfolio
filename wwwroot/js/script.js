@@ -751,8 +751,12 @@ function simpleProjects() {
                 <p class="d">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>    
             `;
             if (dataEval[i].updates !== null) {
+                u = document.createElement('p');
+                u.innerHTML = `
+                    <p class="u">Updates:</p>    
+                `;
+
                 us = document.createElement('ul');
-                us.innerText = 'Updates:';
                 for (let j = 0; j < dataEval[i].updates.length; j++) {
                     let li = document.createElement('li');
                     li.innerHTML = `
@@ -781,6 +785,7 @@ function bestProjects() {
         }
     }).then(dataEval => {
         for (let i = 0; i < dataEval.length; i++) {
+            let u = null;
             let us = null;
 
             let n = document.createElement('p');
@@ -803,9 +808,14 @@ function bestProjects() {
             d.innerHTML = `
                 <p class="d">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>    
             `;
+
             if (dataEval[i].updates !== null) {
+                u = document.createElement('p');
+                u.innerHTML = `
+                    <p class="u">Updates:</p>    
+                `;
+
                 us = document.createElement('ul');
-                us.innerText = 'Updates:';
                 for (let j = 0; j < dataEval[i].updates.length; j++) {
                     let li = document.createElement('li');
                     li.innerHTML = `
@@ -816,7 +826,7 @@ function bestProjects() {
             }
 
             if (dataEval[i].updates === null) targetDiv.append(n, desc, s, src, d);
-            else targetDiv.append(n, desc, s, src, d, us);
+            else targetDiv.append(n, desc, s, src, d, u, us);
             targetDiv.append(document.createElement('br'));
         }
         change_theme();
