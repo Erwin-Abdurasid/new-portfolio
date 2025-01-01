@@ -728,6 +728,7 @@ function simpleProjects() {
         }
     }).then(dataEval => {
         for (let i = 0; i < dataEval.length; i++) {
+            let u = null;
             let us = null;
 
             let n = document.createElement('p');
