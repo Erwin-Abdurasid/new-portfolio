@@ -768,7 +768,7 @@ function simpleProjects() {
             }
 
             if (dataEval[i].updates === null) targetDiv.append(n, desc, s, src, d);
-            else targetDiv.append(n, desc, s, src, d, us);
+            else targetDiv.append(n, desc, s, src, d, u, us);
             targetDiv.append(document.createElement('br'));
         }
         change_theme();
