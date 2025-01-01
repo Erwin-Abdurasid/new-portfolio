@@ -122,6 +122,7 @@ function change_theme() {
     let detailedElems2 = document.querySelectorAll('#contents article section p');
     let detailedElems3 = document.querySelectorAll('#contents article section ul li');
     let detailedElems4 = document.querySelectorAll('#contents article section ul li a');
+    let detailedElems5 = document.querySelectorAll('#contents article section ul li p');
     let backBtnPaths = document.querySelectorAll('#back-btn path');
 
     if (localStorage.getItem('theme') === 'night') {
@@ -165,6 +166,11 @@ function change_theme() {
                 elem.style.textDecorationColor = '#3737ee';
             });
         }
+        if (detailedElems5 !== null) {
+            detailedElems5.forEach(elem => {
+                elem.style.color = '#fff';
+            });
+        }
     } else {
         themeBtn.checked = false;
         document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
@@ -206,6 +212,11 @@ function change_theme() {
                 elem.style.textDecorationColor = '#000049';
             });
         }
+        if (detailedElems5 !== null) {
+            detailedElems5.forEach(elem => {
+                elem.style.color = '#000';
+            });
+        }
     }
 }
 
@@ -245,6 +256,10 @@ function content_extractor(href) {
             dataMngt();
         } else if (href === './subpages/system-design.html') {
             systemDesign();
+        } else if (href === './subpages/simple-projects.html') {
+            simpleProjects();
+        } else if (href === './subpages/best-projects.html') {
+            bestProjects();
         } else {
             change_theme();
         }
@@ -704,3 +719,106 @@ function systemDesign() {
 
 // Projects Subpages Data
 
+function simpleProjects() {
+    let targetDiv = document.querySelector('#contents article section.s-projects');
+
+    fetch('./wwwroot/database/proj-simp-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let us = null;
+
+            let n = document.createElement('p');
+            n.innerHTML = `
+                <p class="n">${dataEval[i].name} <span>(${dataEval[i].version})</span></p>    
+            `;
+            let desc = document.createElement('p');
+            desc.innerHTML = `
+                <p class="desc">Description: <span>${dataEval[i].description}</span></p>    
+            `;
+            let s = document.createElement('p');
+            s.innerHTML = `
+                <p class="s">Status: <span>${dataEval[i].status}</span></p>    
+            `;
+            let src = document.createElement('p');
+            src.innerHTML = `
+                <p class="src">Source Codes: <span>${dataEval[i].src}</span></p>    
+            `;
+            let d = document.createElement('p');
+            d.innerHTML = `
+                <p class="d">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>    
+            `;
+            if (dataEval[i].updates !== null) {
+                us = document.createElement('ul');
+                for (let j = 0; j < dataEval[i].updates.length; j++) {
+                    let li = document.createElement('li');
+                    li.innerHTML = `
+                        <p>${dataEval[i].updates[j].version} ${dataEval[i].updates[j].dateFinished}<p>
+                    `;
+                    us.append(li);
+                }
+            }
+
+            if (dataEval[i].updates === null) targetDiv.append(n, desc, s, src, d);
+            else targetDiv.append(n, desc, s, src, d, us);
+            targetDiv.append(document.createElement('br'));
+        }
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    });
+}
+
+function bestProjects() {
+    let targetDiv = document.querySelector('#contents article section.b-projects');
+
+    fetch('./wwwroot/database/proj-best-data.json').then(res => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then(dataEval => {
+        for (let i = 0; i < dataEval.length; i++) {
+            let us = null;
+
+            let n = document.createElement('p');
+            n.innerHTML = `
+                <p class="n">${dataEval[i].name} <span>(${dataEval[i].version})</span></p>    
+            `;
+            let desc = document.createElement('p');
+            desc.innerHTML = `
+                <p class="desc">Description: <span>${dataEval[i].description}</span></p>    
+            `;
+            let s = document.createElement('p');
+            s.innerHTML = `
+                <p class="s">Status: <span>${dataEval[i].status}</span></p>    
+            `;
+            let src = document.createElement('p');
+            src.innerHTML = `
+                <p class="src">Source Codes: <span>${dataEval[i].src}</span></p>    
+            `;
+            let d = document.createElement('p');
+            d.innerHTML = `
+                <p class="d">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>    
+            `;
+            if (dataEval[i].updates !== null) {
+                us = document.createElement('ul');
+                for (let j = 0; j < dataEval[i].updates.length; j++) {
+                    let li = document.createElement('li');
+                    li.innerHTML = `
+                        <p>${dataEval[i].updates[j].version} ${dataEval[i].updates[j].dateFinished}<p>
+                    `;
+                    us.append(li);
+                }
+            }
+
+            if (dataEval[i].updates === null) targetDiv.append(n, desc, s, src, d);
+            else targetDiv.append(n, desc, s, src, d, us);
+            targetDiv.append(document.createElement('br'));
+        }
+        change_theme();
+    }).catch(err => {
+        console.log(err);
+    });
+}
