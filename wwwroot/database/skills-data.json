@@ -27,17 +27,22 @@
     {
         "name": "SQL/T-SQL",
         "category": "Technical Skill",
-        "proficiency": "Advanced"
+        "proficiency": "Intermediate"
+    },
+    {
+        "name": "Git/Github",
+        "category": "Technical Skill",
+        "proficiency": "Intermediate"
     },
     {
         "name": "Flowchart",
         "category": "Technical Skill",
-        "proficiency": "Advanced"
+        "proficiency": "Expert"
     },
     {
         "name": "UML Diagrams",
         "category": "Technical Skill",
-        "proficiency": "Advanced"
+        "proficiency": "Intermediate"
     },
     {
         "name": "ASP.NET/ Core",
@@ -52,7 +57,7 @@
     {
         "name": ".NET MAUI",
         "category": "Technical Skill",
-        "proficiency": "Advanced"
+        "proficiency": "Intermediate"
     },
     {
         "name": "Programming",
@@ -72,61 +77,66 @@
     {
         "name": "Mobile App Development",
         "category": "Hard Skill",
-        "proficiency": "Advanced"
+        "proficiency": "Intermediate"
     },
     {
         "name": "Database Management",
         "category": "Hard Skill",
-        "proficiency": "Advanced"
+        "proficiency": "Intermediate"
     },
     {
         "name": "System Design",
         "category": "Hard Skill",
-        "proficiency": "Advanced"
+        "proficiency": "Intermediate"
     },
     {
         "name": "Problem-solving",
         "category": "Soft Skill",
-        "proficiency": "Intermediate"
+        "proficiency": null
     },
     {
         "name": "Analyzing",
         "category": "Soft Skill",
-        "proficiency": "Expert"
+        "proficiency": null
     },
     {
         "name": "Leadership",
         "category": "Soft Skill",
-        "proficiency": "Advanced"
+        "proficiency": null
     },
     {
         "name": "Mission-driven",
         "category": "Soft Skill",
-        "proficiency": "Advanced"
+        "proficiency": null
     },
     {
         "name": "Adventurous",
         "category": "Soft Skill",
-        "proficiency": "Advanced"
+        "proficiency": null
     },
     {
         "name": "Patience",
         "category": "Soft Skill",
-        "proficiency": "Advanced"
+        "proficiency": null
+    },
+    {
+        "name": "Fast-learner",
+        "category": "Soft Skill",
+        "proficiency": null
     },
     {
         "name": "Empathy",
         "category": "Soft Skill",
-        "proficiency": "Advanced"
+        "proficiency": null
     },
     {
         "name": "Organization",
         "category": "Soft Skill",
-        "proficiency": "Expert"
+        "proficiency": null
     },
     {
         "name": "Creativity",
         "category": "Soft Skill",
-        "proficiency": "Advanced"
+        "proficiency": null
     }
 ]

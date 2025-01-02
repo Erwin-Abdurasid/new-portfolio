@@ -1,50 +1,50 @@
 [
     {
-        "name": "New Portfolio Website",
+        "name": "New Portfolio",
         "dateStarted": "December 2024",
         "updates": null,
         "dateEnded": "January 2024",
-        "description": "",
+        "description": "This is a static web-based app built from HTML, CSS, and JS programming language. It is for showcasing the developer's knowledge and level in the tech industry.",
         "status": "Development",
         "version": "1.0.0",
-        "src": ""
+        "src": "https://github.com/Erwin-Abdurasid/new-portfolio"
     },
     {
         "name": "Computer Student Simple Management System",
         "dateStarted": "September 2024",
         "updates": null,
         "dateEnded": "October 2024",
-        "description": "",
+        "description": "This is a Windows-based simple-to-use Student Information Management System (SIMS) designed for computer students, developed from C# Programming Language's framework named WinForms.",
         "status": "Incomplete",
         "version": "1.0.0",
-        "src": ""
+        "src": null
     },
     {
         "name": "TechWannabe Pet Collections",
         "dateStarted": "2023",
         "updates": null,
         "dateEnded": "2023",
-        "description": "",
+        "description": "This is a web-based e-commerce system developed from two frameworks of the C# programming language, the ASP.NET Blazor as the frontend and the ASP.NET MVC as the backend, in the form of an API. It is for selling pets.",
         "status": "Completed",
         "version": "1.0.0",
-        "src": ""
+        "src": null
     },
     {
         "name": "Porfolio Website",
         "dateStarted": "2022",
         "updates": null,
         "dateEnded": "2022",
-        "description": "",
+        "description": "This is a pure static website built from HTML and CSS. It is for showcasing the developer's knowledge and level in the tech industry.",
         "status": "Completed",
         "version": "1.0.0",
-        "src": ""
+        "src": "https://github.com/Erwin-Abdurasid/Portfolio"
     },
     {
         "name": "NumSys-C Mobile Application",
         "dateStarted": "2022",
         "updates": null,
         "dateEnded": "2022",
-        "description": "",
+        "description": "This is an Android mobile learning app developed using C# Programming Language's old framework named Xamarin Forms. It helps the user interact with and understand the true language of computers, the binary number system, and many more.",
         "status": "Completed",
         "version": "1.0.0",
         "src": null

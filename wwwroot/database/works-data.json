@@ -4,8 +4,9 @@
         "jobAddress": "www.facebook.com",
         "role": "Freelance Programmer",
         "responsibilities": [
-            "Assisted many junior, mid-level and senior software programmers finish their software development projects on time",
-            "Maximized many IT, CS or other IT-related students projects by helping and teaching them how to code their projects"
+            "Transferred the database from MS SQL Server to MySQL of the legacy ASP.NET system, the TUA Café Web E-Commerce System.",
+            "Created a perfect printout based on the client’s instructions on their legacy ASP.NET ERP system.",
+            "Fixed the legacy ASP VB.NET E-Maintenance System."
         ],
         "dateStarted": "August 2022",
         "dateEnded": "Jan 2025",

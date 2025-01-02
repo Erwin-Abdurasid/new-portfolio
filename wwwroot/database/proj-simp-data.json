@@ -4,20 +4,20 @@
         "dateStarted": "December 2024",
         "updates": null,
         "dateEnded": "December 2024",
-        "description": "",
+        "description": "This is a web-based utility app developed from the C# programming language's framework named ASP.NET Blazor. It scrapes the website's HTML data.",
         "status": "Completed",
         "version": "1.0.0",
-        "src": ""
+        "src": null
     },
     {
         "name": "Paint Canvas",
         "dateStarted": "December 2024",
         "updates": null,
         "dateEnded": "December 2024",
-        "description": "",
+        "description": "This is a Windows utility app developed from the C# programming language's framework named WinForms. It helps the user describe his/her words in a graphical way.",
         "status": "Completed",
         "version": "1.0.0",
-        "src": ""
+        "src": null
     },
     {
         "name": "Rainbow Hello World",
@@ -37,19 +37,19 @@
             }
         ],
         "dateEnded": "November 2024",
-        "description": "",
+        "description": "This is a CLI-based app developed solely from the C# programming language that just displays the text in an artistic and musical way. Though it is just for fun, it is useful when you want to display text artistically with music for coding videos or others.",
         "status": "Completed",
         "version": "2.1.0",
-        "src": ""
+        "src": null
     },
     {
         "name": "Guess the Hidden Character Game Console App",
         "dateStarted": "2022",
         "updates": null,
         "dateEnded": "2022",
-        "description": "",
+        "description": "This is a CLI-based game app developed solely from the C# programming language for both game and learning purposes. It tests and practices the recognition ability of the player.",
         "status": "Completed",
         "version": "1.0.0",
-        "src": ""
+        "src": "https://github.com/Erwin-Abdurasid/Guess-TheHiddenCharacter-Game"
     }
 ]

@@ -7,12 +7,16 @@ window.onload = function () {
 }
 
 function js_responsibilities() {
-    let href = './subpages/home.html';
+    let hrefObj = {
+        url: './subpages/home.html',
+        title: 'Home | New Portfolio'
+    };
 
-    content_extractor(href);
+    stack.push(JSON.stringify(hrefObj));
+
+    content_extractor(hrefObj.url, hrefObj.title);
     downloadResumeAnimation();
     toggleTheme();
-    stack.push(href);
 }
 
 function registerHrefs() {
@@ -20,68 +24,93 @@ function registerHrefs() {
 
     hrefSettings.forEach(el => {
         el.addEventListener('click', () => {
-            let hrefData;
+            let hrefData = null;
+            let titleText = null;
 
             switch (el.dataset.ref) {
                 case '/':
                     stack.clear();
                     hrefData = './subpages/home.html';
+                    titleText = 'Home | New Portfolio';
                     break;
                 case '/projects':
                     hrefData = './subpages/projects.html';
+                    titleText = 'Projects | New Portfolio';
                     break;
                 case '/projects-B':
                     hrefData = './subpages/best-projects.html';
+                    titleText = 'Best | Projects | New Portfolio';
                     break;
                 case '/projects-S':
                     hrefData = './subpages/simple-projects.html';
+                    titleText = 'Simple | Projects | New Portfolio';
                     break;
                 case '/services':
                     hrefData = './subpages/services.html';
+                    titleText = 'Services | New Portfolio';
                     break;
                 case '/programming':
                     hrefData = './subpages/services-programming.html';
+                    titleText = 'Programming | Services | New Portfolio';
                     break;
                 case '/desk-devt':
                     hrefData = './subpages/services-deskdev.html';
+                    titleText = 'Desktop App Development | Services | New Portfolio';
                     break;
                 case '/web-devt':
                     hrefData = './subpages/services-webdev.html';
+                    titleText = 'Web Development | Services | New Portfolio';
                     break;
                 case '/mobile-devt':
                     hrefData = './subpages/services-mobiledev.html';
+                    titleText = 'Mobile App Development | Services | New Portfolio';
                     break;
                 case '/data-mngt':
                     hrefData = './subpages/database-management.html';
+                    titleText = 'Database Management | Services | New Portfolio';
                     break;
                 case '/system-design':
                     hrefData = './subpages/system-design.html';
+                    titleText = 'System Design | Services | New Portfolio';
                     break;
                 case '/about':
                     hrefData = './subpages/about.html';
+                    titleText = 'About | New Portfolio';
                     break;
                 case '/contacts':
                     hrefData = './subpages/contacts.html';
+                    titleText = 'Contacts + Image | About | New Portfolio';
                     break;
                 case '/educ':
                     hrefData = './subpages/educ.html';
+                    titleText = 'Education | About | New Portfolio';
                     break;
                 case '/works':
                     hrefData = './subpages/works.html';
+                    titleText = 'Work Experiences | About | New Portfolio';
                     break;
                 case '/skills':
                     hrefData = './subpages/skills.html';
+                    titleText = 'Skills | About | New Portfolio';
                     break;
                 case '/certs':
                     hrefData = './subpages/certs.html';
+                    titleText = 'Certifications, Licences & Trainings | About | New Portfolio';
                     break;
                 case '/interests':
                     hrefData = './subpages/interests.html';
+                    titleText = 'Hobbies & Interests | About | New Portfolio';
                     break;
             }
 
-            stack.push(hrefData);
-            content_extractor(hrefData);
+            let hrefObj = {
+                url: hrefData,
+                title: titleText
+            };
+
+            stack.push(JSON.stringify(hrefObj));
+
+            content_extractor(hrefData, titleText);
         });
     });
 }
@@ -122,7 +151,6 @@ function change_theme() {
     let detailedElems2 = document.querySelectorAll('#contents article section p');
     let detailedElems3 = document.querySelectorAll('#contents article section ul li');
     let detailedElems4 = document.querySelectorAll('#contents article section ul li a');
-    let detailedElems5 = document.querySelectorAll('#contents article section ul li p');
     let backBtnPaths = document.querySelectorAll('#back-btn path');
 
     if (localStorage.getItem('theme') === 'night') {
@@ -166,11 +194,6 @@ function change_theme() {
                 elem.style.textDecorationColor = '#3737ee';
             });
         }
-        if (detailedElems5 !== null) {
-            detailedElems5.forEach(elem => {
-                elem.style.color = '#fff';
-            });
-        }
     } else {
         themeBtn.checked = false;
         document.body.style.background = 'linear-gradient(to bottom, #9AC5F4, #99DBF5, #A7ECEE, #FFEEBB)';
@@ -212,16 +235,12 @@ function change_theme() {
                 elem.style.textDecorationColor = '#000049';
             });
         }
-        if (detailedElems5 !== null) {
-            detailedElems5.forEach(elem => {
-                elem.style.color = '#000';
-            });
-        }
     }
 }
 
-function content_extractor(href) {
+function content_extractor(href, titleText) {
     let header = document.querySelector('header');
+    let title = document.querySelector('title');
 
     fetch(href).then(res => {
         if (res.ok) {
@@ -230,6 +249,7 @@ function content_extractor(href) {
     }).then(htmlSnippet => {
         content_remover();
         header.insertAdjacentHTML('afterend', htmlSnippet);
+        title.innerText = titleText;
 
         // Data Access Areas
         if (href === './subpages/contacts.html') {
@@ -301,7 +321,10 @@ function registerBackBtn() {
     if (backBtn !== null) {
         backBtn.addEventListener('click', () => {
             stack.pop();
-            content_extractor(stack.peek());
+
+            let hrefObj = JSON.parse(stack.peek());
+
+            content_extractor(hrefObj.url, hrefObj.title);
         });
     }
 }
@@ -457,40 +480,55 @@ function skills() {
     }).then(dataEval => {
         for (let i = 0; i < dataEval.length; i++) {
             if (dataEval[i].category === 'Technical Skill') {
+                let p = null;
+
                 let n = document.createElement('p');
                 n.innerHTML = `
                         <p class="n">${dataEval[i].name}</p>
                     `;
-                let p = document.createElement('p');
-                p.innerHTML = `
-                        <p class="p">Proficiency: <span>${dataEval[i].proficiency}</span></p>
-                    `;
+                if (dataEval[i].proficiency !== null) {
+                    p = document.createElement('p');
+                    p.innerHTML = `
+                                <p class="p">Proficiency: <span>${dataEval[i].proficiency}</span></p>
+                            `;
+                }
 
-                techSkills.append(n, p);
+                if (p === null) techSkills.append(n);
+                else techSkills.append(n, p);
                 techSkills.append(document.createElement('br'));
             } else if (dataEval[i].category === 'Hard Skill') {
+                let p = null;
+
                 let n = document.createElement('p');
                 n.innerHTML = `
                         <p class="n">${dataEval[i].name}</p>
                     `;
-                let p = document.createElement('p');
-                p.innerHTML = `
-                        <p class="p">Proficiency: <span>${dataEval[i].proficiency}</span></p>
-                    `;
+                if (dataEval[i].proficiency !== null) {
+                    p = document.createElement('p');
+                    p.innerHTML = `
+                            <p class="p">Proficiency: <span>${dataEval[i].proficiency}</span></p>
+                        `;
+                }
 
-                hardSkills.append(n, p);
+                if (p === null) hardSkills.append(n);
+                else hardSkills.append(n, p);
                 hardSkills.append(document.createElement('br'));
             } else if (dataEval[i].category === 'Soft Skill') {
+                let p = null;
+
                 let n = document.createElement('p');
                 n.innerHTML = `
                         <p class="n">${dataEval[i].name}</p>
                     `;
-                let p = document.createElement('p');
-                p.innerHTML = `
+                if (dataEval[i].proficiency !== null) {
+                    p = document.createElement('p');
+                    p.innerHTML = `
                         <p class="p">Proficiency: <span>${dataEval[i].proficiency}</span></p>
                     `;
+                }
 
-                softSkills.append(n, p);
+                if (p === null) softSkills.append(n);
+                else softSkills.append(n, p);
                 softSkills.append(document.createElement('br'));
             }
         }
@@ -737,8 +775,13 @@ function simpleProjects() {
             `;
             let desc = document.createElement('p');
             desc.innerHTML = `
-                <p class="desc">Description: <span>${dataEval[i].description}</span></p>    
+                <p class="desc">Description:</p>    
             `;
+            let descl = document.createElement('ul');
+            let descli = document.createElement('li');
+            descli.innerHTML = `${dataEval[i].description}`;
+            descl.append(descli);
+
             let s = document.createElement('p');
             s.innerHTML = `
                 <p class="s">Status: <span>${dataEval[i].status}</span></p>    
@@ -761,14 +804,14 @@ function simpleProjects() {
                 for (let j = 0; j < dataEval[i].updates.length; j++) {
                     let li = document.createElement('li');
                     li.innerHTML = `
-                        <p>${dataEval[i].updates[j].version} ${dataEval[i].updates[j].dateFinished}<p>
+                        ${dataEval[i].updates[j].version} ${dataEval[i].updates[j].dateFinished}
                     `;
                     us.append(li);
                 }
             }
 
-            if (dataEval[i].updates === null) targetDiv.append(n, desc, s, src, d);
-            else targetDiv.append(n, desc, s, src, d, u, us);
+            if (dataEval[i].updates === null) targetDiv.append(n, desc, descl, s, src, d);
+            else targetDiv.append(n, desc, descl, s, src, d, u, us);
             targetDiv.append(document.createElement('br'));
         }
         change_theme();
@@ -795,8 +838,13 @@ function bestProjects() {
             `;
             let desc = document.createElement('p');
             desc.innerHTML = `
-                <p class="desc">Description: <span>${dataEval[i].description}</span></p>    
+                <p class="desc">Description:</p>    
             `;
+            let descl = document.createElement('ul');
+            let descli = document.createElement('li');
+            descli.innerHTML = `${dataEval[i].description}`;
+            descl.append(descli);
+
             let s = document.createElement('p');
             s.innerHTML = `
                 <p class="s">Status: <span>${dataEval[i].status}</span></p>    
@@ -820,14 +868,14 @@ function bestProjects() {
                 for (let j = 0; j < dataEval[i].updates.length; j++) {
                     let li = document.createElement('li');
                     li.innerHTML = `
-                        <p>${dataEval[i].updates[j].version} ${dataEval[i].updates[j].dateFinished}<p>
+                        ${dataEval[i].updates[j].version} ${dataEval[i].updates[j].dateFinished}
                     `;
                     us.append(li);
                 }
             }
 
-            if (dataEval[i].updates === null) targetDiv.append(n, desc, s, src, d);
-            else targetDiv.append(n, desc, s, src, d, u, us);
+            if (dataEval[i].updates === null) targetDiv.append(n, desc, descl, s, src, d);
+            else targetDiv.append(n, desc, descl, s, src, d, u, us);
             targetDiv.append(document.createElement('br'));
         }
         change_theme();
