@@ -17,7 +17,7 @@
         "description": "This is a Windows-based simple-to-use Student Information Management System (SIMS) designed for computer students, developed from C# Programming Language's framework named WinForms.",
         "status": "Incomplete",
         "version": "1.0.0",
-        "src": null
+        "src": "https://github.com/Erwin-Abdurasid/scsims-desktop-win"
     },
     {
         "name": "TechWannabe Pet Collections",
@@ -27,7 +27,7 @@
         "description": "This is a web-based e-commerce system developed from two frameworks of the C# programming language, the ASP.NET Blazor as the frontend and the ASP.NET MVC as the backend, in the form of an API. It is for selling pets.",
         "status": "Completed",
         "version": "1.0.0",
-        "src": null
+        "src": "https://github.com/Erwin-Abdurasid/twpc-webapp"
     },
     {
         "name": "Porfolio Website",
