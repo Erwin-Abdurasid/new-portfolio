@@ -791,9 +791,15 @@ function simpleProjects() {
                 <p class="src">Source Codes: <span>${(dataEval[i].src === null ? "Unavailable" : dataEval[i].src)}</span></p>    
             `;
             let d = document.createElement('p');
-            d.innerHTML = `
+            if (dataEval[i].dateStarted === dataEval[i].dateEnded) {
+                d.innerHTML = `
+                <p class="d">Date: <span>${dataEval[i].dateStarted}</span></p>    
+            `;
+            } else {
+                d.innerHTML = `
                 <p class="d">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>    
             `;
+            }
             if (dataEval[i].updates !== null) {
                 u = document.createElement('p');
                 u.innerHTML = `
@@ -854,9 +860,15 @@ function bestProjects() {
                 <p class="src">Source Codes: <span>${(dataEval[i].src === null ? "Unavailable" : dataEval[i].src)}</span></p>    
             `;
             let d = document.createElement('p');
-            d.innerHTML = `
+            if (dataEval[i].dateStarted === dataEval[i].dateEnded) {
+                d.innerHTML = `
+                <p class="d">Date: <span>${dataEval[i].dateStarted}</span></p>    
+            `;
+            } else {
+                d.innerHTML = `
                 <p class="d">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>    
             `;
+            }
 
             if (dataEval[i].updates !== null) {
                 u = document.createElement('p');
