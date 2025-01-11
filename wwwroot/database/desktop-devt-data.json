@@ -5,14 +5,14 @@
     },
     {
         "name": "MS SQL Server",
-        "category": "Transact SQL (T-SQL)"
+        "category": "Microsoft"
     },
     {
         "name": "MySQL",
-        "category": "SQL"
+        "category": "Oracle"
     },
     {
         "name": "SQLite",
-        "category": "SQL"
+        "category": ""
     }
 ]

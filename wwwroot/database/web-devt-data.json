@@ -17,14 +17,14 @@
     },
     {
         "name": "MS SQL Server",
-        "category": "Transact SQL (T-SQL)"
+        "category": "Database"
     },
     {
         "name": "MySQL",
-        "category": "SQL"
+        "category": "Database"
     },
     {
         "name": "SQLite",
-        "category": "SQL"
+        "category": "Database"
     }
 ]
