@@ -149,6 +149,7 @@ function change_theme() {
     let contents = document.querySelectorAll('#contents article');
     let detailedElems = document.querySelectorAll('#contents article section h3');
     let detailedElems2 = document.querySelectorAll('#contents article section p');
+    let detailedElems2A = document.querySelectorAll('#contents article section p a');
     let detailedElems3 = document.querySelectorAll('#contents article section ul li');
     let detailedElems4 = document.querySelectorAll('#contents article section ul li a');
     let backBtnPaths = document.querySelectorAll('#back-btn path');
@@ -180,6 +181,11 @@ function change_theme() {
         }
         if (detailedElems2 !== null) {
             detailedElems2.forEach(elem => {
+                elem.style.color = '#fff';
+            });
+        }
+        if (detailedElems2A !== null) {
+            detailedElems2A.forEach(elem => {
                 elem.style.color = '#fff';
             });
         }
@@ -221,6 +227,11 @@ function change_theme() {
         }
         if (detailedElems2 !== null) {
             detailedElems2.forEach(elem => {
+                elem.style.color = '#000';
+            });
+        }
+        if (detailedElems2A !== null) {
+            detailedElems2A.forEach(elem => {
                 elem.style.color = '#000';
             });
         }
@@ -399,9 +410,15 @@ function education() {
                     <p class="u">University: <span>${dataEval[i].university}</span></p>
                 `;
             let d = document.createElement('p');
-            d.innerHTML = `
-                    <p class="ds">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>
-                `;
+            if (dataEval[i].dateStarted === dataEval[i].dateEnded) {
+                d.innerHTML = `
+                <p class="ds">Date: <span>${dataEval[i].dateEnded}</span></p>
+            `;
+            } else {
+                d.innerHTML = `
+                <p class="ds">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>
+            `;
+            }
             let yt = document.createElement('p');
             yt.innerHTML = `
                     <p class="yt">Years Took: <span>${dataEval[i].yearsTook}</span></p>
@@ -442,9 +459,16 @@ function workExperiences() {
                     <p class="ja">Job Address: <span>${dataEval[i].jobAddress}</span></p>
                 `;
             let d = document.createElement('p');
-            d.innerHTML = `
+            if (dataEval[i].dateStarted === dataEval[i].dateEnded) {
+                d.innerHTML = `
+                    <p class="d">Date: <span>${dataEval[i].dateEnded}</span></p>
+                `;
+            } else {
+                d.innerHTML = `
                     <p class="d">Date: <span>${dataEval[i].dateStarted}&mdash;${dataEval[i].dateEnded}</span></p>
                 `;
+            }
+
             let yt = document.createElement('p');
             yt.innerHTML = `
                     <p class="yt">Years Took: <span>${dataEval[i].yearsTook}</span></p>
@@ -787,9 +811,16 @@ function simpleProjects() {
                 <p class="s">Status: <span>${dataEval[i].status}</span></p>    
             `;
             let src = document.createElement('p');
-            src.innerHTML = `
-                <p class="src">Source Codes: <span>${(dataEval[i].src === null ? "Unavailable" : dataEval[i].src)}</span></p>    
+            if (dataEval[i].src === null) {
+                src.innerHTML = `
+                <p class="src">Source Codes: <span>Unavailable</span></p>    
             `;
+            } else {
+                src.innerHTML = `
+                 <p class="src">Source Codes: <a href="${dataEval[i].src}">${dataEval[i].src}</a></p>   
+            `;
+            }
+
             let d = document.createElement('p');
             if (dataEval[i].dateStarted === dataEval[i].dateEnded) {
                 d.innerHTML = `
@@ -856,9 +887,15 @@ function bestProjects() {
                 <p class="s">Status: <span>${dataEval[i].status}</span></p>    
             `;
             let src = document.createElement('p');
-            src.innerHTML = `
-                <p class="src">Source Codes: <span>${(dataEval[i].src === null ? "Unavailable" : dataEval[i].src)}</span></p>    
+            if (dataEval[i].src === null) {
+                src.innerHTML = `
+                <p class="src">Source Codes: <span>Unavailable</span></p>    
             `;
+            } else {
+                src.innerHTML = `
+                <p class="src">Source Codes: <a href="${dataEval[i].src}">${dataEval[i].src}</a></p>    
+            `;
+            }
             let d = document.createElement('p');
             if (dataEval[i].dateStarted === dataEval[i].dateEnded) {
                 d.innerHTML = `

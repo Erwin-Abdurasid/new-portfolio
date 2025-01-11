@@ -246,6 +246,17 @@ footer {
     font-weight: normal;
 }
 
+#contents article section p a {
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#contents article section p a:hover {
+    text-decoration: underline;
+    text-decoration-color: #000099;
+}
+
 #contents article section ul li a {
     color: #000;
     text-decoration: none;
