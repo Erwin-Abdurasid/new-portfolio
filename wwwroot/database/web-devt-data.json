@@ -14,5 +14,17 @@
     {
         "name": "ASP.NET Core Razor Pages",
         "category": "Backend"
+    },
+    {
+        "name": "MS SQL Server",
+        "category": "Transact SQL (T-SQL)"
+    },
+    {
+        "name": "MySQL",
+        "category": "SQL"
+    },
+    {
+        "name": "SQLite",
+        "category": "SQL"
     }
 ]

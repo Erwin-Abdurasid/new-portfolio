@@ -2,5 +2,17 @@
     {
         "name": "WinForms",
         "category": "Windows OS"
+    },
+    {
+        "name": "MS SQL Server",
+        "category": "Transact SQL (T-SQL)"
+    },
+    {
+        "name": "MySQL",
+        "category": "SQL"
+    },
+    {
+        "name": "SQLite",
+        "category": "SQL"
     }
 ]
