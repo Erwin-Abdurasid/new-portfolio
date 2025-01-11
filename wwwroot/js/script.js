@@ -474,7 +474,7 @@ function workExperiences() {
                     <p class="yt">Years Took: <span>${dataEval[i].yearsTook}</span></p>
                 `;
             let rpbl = document.createElement('p');
-            rpbl.innerText = 'Responsibilities:';
+            rpbl.innerText = 'Key Achievements:';
             let responsibilities = document.createElement('ul');
 
             for (let j = 0; j < dataEval[i].responsibilities.length; j++) {
