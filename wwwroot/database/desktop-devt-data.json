@@ -5,14 +5,14 @@
     },
     {
         "name": "MS SQL Server",
-        "category": "Microsoft"
+        "category": "Cross-platform"
     },
     {
         "name": "MySQL",
-        "category": "Oracle"
+        "category": "Cross-platform"
     },
     {
         "name": "SQLite",
-        "category": "SQLite"
+        "category": "Cross-platform"
     }
 ]
