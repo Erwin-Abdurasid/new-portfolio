@@ -400,10 +400,17 @@ function education() {
                 `;
             }
             if (dataEval[i].finalGrade !== null) {
-                fg = document.createElement('p');
-                fg.innerHTML = `
+                if (dataEval[i].usesGPA === true) {
+                    fg = document.createElement('p');
+                    fg.innerHTML = `
+                        <p class="fg">GPA: <span>${dataEval[i].finalGrade}</span></p>
+                    `;
+                } else {
+                    fg = document.createElement('p');
+                    fg.innerHTML = `
                     <p class="fg">Final Grade: <span>${dataEval[i].finalGrade}</span></p>
                 `;
+                }
             }
             let u = document.createElement('p');
             u.innerHTML = `
