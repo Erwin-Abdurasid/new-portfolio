@@ -1,14 +1,17 @@
 [
     {
         "name": "MS SQL Server",
-        "category": "Transact SQL (T-SQL)"
+        "category": "Relational Database",
+        "language": "Transact SQL (T-SQL)"
     },
     {
         "name": "MySQL",
-        "category": "SQL"
+        "category": "Relational Database",
+        "language": "SQL"
     },
     {
         "name": "SQLite",
-        "category": "SQL"
+        "category": "Relational Database",
+        "language": "SQL"
     }
 ]

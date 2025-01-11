@@ -748,7 +748,11 @@ function dataMngt() {
             c.innerHTML = `
                 <p class="c">Category: <span>${dataEval[i].category}</span></p>    
             `;
-            targetDiv.append(n, c);
+            let l = document.createElement('p');
+            l.innerHTML = `
+                <p class="l">Language: <span>${dataEval[i].language}</span></p>    
+            `;
+            targetDiv.append(n, c, l);
             targetDiv.append(document.createElement('br'));
         }
         change_theme();
